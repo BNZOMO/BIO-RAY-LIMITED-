@@ -62,6 +62,7 @@
       grid-template-columns:1fr 420px;
       gap:2rem;
       align-items:center;
+      position:relative; /* for canvas and overlays */
     }
     .hero-intro h2{margin:0;font-size:2rem;color:var(--navy)}
     .tagline{font-size:1.05rem;color:rgba(33,33,33,0.85);margin:0.4rem 0 1.1rem}
@@ -355,9 +356,63 @@
       .services-grid, .projects-grid{grid-template-columns:1fr}
       .hero-intro h2{font-size:1.6rem}
     }
+    /* --- Added animation styles (performance-minded) --- */
+    @media (prefers-reduced-motion: no-preference) {
+      /* Hero entrance */
+      .hero-intro { opacity: 0; transform: translateY(10px); transition: transform 640ms cubic-bezier(.2,.9,.2,1), opacity 640ms ease; will-change: transform, opacity; }
+      .hero-intro.is-visible { opacity: 1; transform: translateY(0); }
+
+      /* Buttons: scale + glow on hover */
+      .btn-primary, .btn-secondary { transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease; will-change: transform, box-shadow; }
+      .btn-primary:hover, .btn-secondary:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 36px rgba(10,42,77,0.12), 0 4px 12px rgba(245,124,0,0.06); }
+
+      /* Reveal on scroll (keep layout stable by using only transform+opacity) */
+      .reveal-on-scroll { opacity: 0; transform: translateY(16px); transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 560ms ease; will-change: transform, opacity; }
+      .reveal-on-scroll.in-view { opacity: 1; transform: translateY(0); }
+
+      /* Navbar hide/show */
+      header { transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease; will-change: transform, opacity; }
+      header.nav-hidden { transform: translateY(-110%); opacity: 0; }
+
+      /* Image subtle hover parallax / zoom */
+      .parallax-img { overflow: hidden; display:block; }
+      .parallax-img img { transition: transform 650ms cubic-bezier(.2,.9,.2,1); will-change: transform; }
+      .parallax-img:hover img { transform: scale(1.06) translateY(-3%); }
+
+      /* Gallery: staggered reveal + caption slide */
+      .gallery-item.reveal-on-scroll { opacity: 0; transform: translateY(16px) scale(0.995); }
+      .gallery-item.in-view { opacity: 1; transform: translateY(0) scale(1); }
+      .gallery-caption { transform: translateY(100%); transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease; opacity: 0; }
+      .gallery-item:hover .gallery-caption { transform: translateY(0); opacity: 1; }
+
+      /* Service hover: lift + subtle icon movement */
+      .service { transition: transform 340ms cubic-bezier(.2,.9,.2,1), box-shadow 340ms ease; will-change: transform, box-shadow; }
+      .service:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(10,42,77,0.08); }
+      .service .service-img, .service svg { transition: transform 520ms cubic-bezier(.2,.9,.2,1); will-change: transform; }
+      .service:hover .service-img, .service:hover svg { transform: translateY(-4px) scale(1.02); }
+
+      /* Projects: card lift, image zoom, caption reveal */
+      .projects-grid .project { transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease; will-change: transform, box-shadow; }
+      .projects-grid .project img { transition: transform 650ms cubic-bezier(.2,.9,.2,1); will-change: transform; display:block; }
+      .projects-grid .project .pbody { transition: transform 380ms cubic-bezier(.2,.9,.2,1), opacity 320ms ease; transform: translateY(8px); opacity: 0.95; }
+      .projects-grid .project.in-view .pbody { transform: translateY(0); opacity: 1; }
+      .projects-grid .project:hover { transform: translateY(-10px); box-shadow: 0 24px 48px rgba(10,42,77,0.09); }
+      .projects-grid .project:hover img { transform: scale(1.04) translateY(-4%); }
+    }
+
+    /* Reduced motion fallback */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-intro, .reveal-on-scroll, .btn-primary, .btn-secondary, header, .parallax-img img { transition: none !important; transform: none !important; opacity: 1 !important; }
+    }
+    /* QR display (responsive) */
+    .qr-code{ width:140px; height:140px; border-radius:8px; border:1px solid rgba(10,42,77,0.04); object-fit:contain; display:block }
+    @media (min-width:980px){ .qr-code{ width:180px; height:180px } }
   </style>
 </head>
 <body>
+
+  <!-- Canvas particle layer for hero (will be inserted under hero content) -->
+  <!-- Canvas is positioned inside .hero via JS and CSS. -->
 
   <!-- Header -->
   <header>
@@ -419,6 +474,8 @@
       </div>
 
       <aside class="card" aria-label="contact card">
+        <!-- Lottie hero container (lazy-loaded) -->
+        <div id="lottie-hero" style="width:100%;height:160px;margin-bottom:0.8rem;display:block"></div>
         <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.6rem">
           <div style="width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--red));display:flex;align-items:center;justify-content:center;">
             <img src="logo.png" alt="BR Shield Solutions logo" width="64" height="64" style="width:64px;height:64px;border-radius:10px;object-fit:contain;display:block;" />
@@ -445,7 +502,7 @@
         <div style="margin-top:1rem;text-align:center">
           <div style="font-size:0.85rem;color:rgba(33,33,33,0.66);margin-bottom:0.6rem">Scan to save contact</div>
           <!-- Replace the src with an actual QR image generated for your vCard / contact link -->
-          <img src="https://via.placeholder.com/120x120.png?text=QR" alt="QR code placeholder" style="border-radius:8px;border:1px solid rgba(10,42,77,0.04)"/>
+          <img class="qr-code" src="QR CODE.png" alt="QR code placeholder"/>
         </div>
       </aside>
     </section>
@@ -478,13 +535,13 @@
       <div class="about-grid grid">
         <div>
           <h3>About BR Shield Solutions</h3>
-          <p><strong>BR Shield Solutions</strong> is a Kenyan-based company providing smart security and fire protection systems. We specialize in CCTV, smart homes automation (Curtains and Lights), alarms, access control, electric fencing, and fire safety installations, delivering reliable solutions that ensure smart protection and real peace of mind.</p>
+          <p><strong>BR Shield Solutions</strong> is a Kenya-based provider of integrated security, fire protection, and solar energy solutions. We deliver smart, reliable systems including CCTV, alarms, access control, electric fencing, fire safety, smart home automation, and solar installations—ensuring safety, efficiency, and peace of mind.</p>
 
           <h4 style="margin-top:0.8rem">Mission</h4>
-          <p>Our mission is to provide cutting-edge security and fire protection solutions that safeguard lives, businesses, and assets with integrity and professionalism.</p>
+          <p>To provide reliable and innovative security, fire, and solar solutions with integrity and professionalism.</p>
 
           <h4 style="margin-top:0.8rem">Vision</h4>
-          <p>To be recognized as the leading provider of integrated security and safety solutions across the world.</p>
+          <p>To be a trusted global leader in security, safety, and sustainable energy solutions.</p>
         </div>
 
         <aside class="profile-card">
@@ -493,11 +550,11 @@
           <!-- Director 1 -->
           <div style="display:flex;gap:0.8rem;align-items:center;margin-bottom:0.7rem">
         <a href="director-1.jpg" class="img-link" title="View Brian Nzomo photo">
-          <img src="director-1.jpg" alt="Brian Nzomo — Director" width="64" height="64" loading="lazy" style="width:64px;height:64px;border-radius:8px;object-fit:cover;object-position:center top"/>
+          <img src="director-1.jpg" alt="Brian Nzomo — Managing Director" width="64" height="64" loading="lazy" style="width:64px;height:64px;border-radius:8px;object-fit:cover;object-position:center top"/>
             </a>
             <div>
               <div style="font-weight:700">Brian Nzomo</div>
-              <div style="font-size:0.9rem;color:rgba(33,33,33,0.67)">Director</div>
+              <div style="font-size:0.9rem;color:rgba(33,33,33,0.67)">Managing Director</div>
             </div>
           </div>
 
@@ -523,22 +580,22 @@
         </div>
 
         <div class="service">
-          <a class="img-link" href="alarm-system-2.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="alarm-system-2.jpeg" alt="Alarm systems" width="56" height="56" loading="lazy">
+          <a class="img-link" href="solar panels.jpg" target="_blank" rel="noopener">
+            <img class="service-img" src="solar panels.jpg" alt="Solar energy" width="56" height="56" loading="lazy">
           </a>
           <div>
-            <h4>Alarm Systems</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Intruder and perimeter alarm systems with optional monitoring and response integration.</div>
+            <h4>Solar Energy Solutions</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Supply and installation of efficient solar water heating systems for residential and commercial use.</div>
           </div>
         </div>
 
         <div class="service">
-          <a class="img-link" href="biometric.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="biometric.jpeg" alt="Access control" width="56" height="56" loading="lazy">
+          <a class="img-link" href="alarm-system-2.jpeg" target="_blank" rel="noopener">
+            <img class="service-img" src="alarm-system-2.jpeg" alt="Access control" width="56" height="56" loading="lazy">
           </a>
           <div>
-            <h4>Access Control</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Card readers, biometric systems and secure door controllers for staff and visitor access management.</div>
+            <h4>Alarm & Access Control Systems</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Integrated alarm and access control solutions including biometrics, card systems, and intrusion detection.</div>
           </div>
         </div>
 
@@ -557,8 +614,8 @@
               <img class="service-img" src="fire-maintenance.jpg" alt="Maintenance and support" width="56" height="56" loading="lazy">
             </a>
           <div>
-            <h4>Maintenance & Support</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Scheduled maintenance, remote troubleshooting and priority support packages.</div>
+            <h4>Fire Equipments Supply & Maintenance.</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Supply, installation, inspection, and servicing of certified fire safety equipment to ensure compliance.</div>
           </div>
         </div>
 
@@ -569,6 +626,130 @@
           <div>
             <h4>Smart Homes Automation</h4>
             <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Control your lights, security, and home devices from your phone—making your home safer and smarter.
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / PORTFOLIO -->
+    <section id="projects" aria-label="projects">
+      <h3>Selected Projects</h3>
+      <div class="projects-grid grid">
+        <!-- Project 1 -->
+        <article class="project">
+          <img src="packgroup.jpg" alt="PackGroup CCTV system — Industrial Area" loading="lazy">
+          <div class="pbody">
+            <strong>PackGroup CCTV system — Industrial Area</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Business • Location: Industrial Area, Nairobi • Description: 22-camera HD system with remote access and night vision. Completed: Jan 2025</p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+          <img src="automatic.jpg" alt="Automated Fire extinguishers system — Athiriver" loading="lazy">
+          <div class="pbody">
+            <strong>Royal Mattresses Limited — Automatic Fire extinguishers</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Business • Location: Athiriver • Installation of 18 Automatic fire extinguishers. Completed: Mar 2025</p>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project">
+          <img src="electric-fence-2.jpeg" alt="Institutional perimeter security — Kiambu" loading="lazy">
+          <div class="pbody">
+            <strong>Institutional Perimeter Security</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Institution • Location: Kiambu • Description: Electric fencing and alarm system with scheduled maintenance contract. Completed: Nov 2024</p>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project">
+          <img src="Solar Heaters.jpeg" alt="Biometric access control — Westlands" loading="lazy">
+          <div class="pbody">
+            <strong>Solar Water heaters installations — Westlands</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Commercial • Location: Westlands, Nairobi • Description: Installation of a 300 Litre Pressurized solar heater for a 5 Bedroom Mansion. Completed: Feb 2025</p>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project">
+          <img src="Solar shed.jpg" alt="Solar Car Shade — Kitengela" loading="lazy">
+          <div class="pbody">
+            <strong>Solar Car Shade — Kitengela</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Residential • Location: Kitengela, Kajiado • Description: Design and installation of secure solar car shades for safe housing and optimal performance. Completed: Apr 2025</p>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="project">
+          <img src="fire-maintenance.jpg" alt="Fire alarm installation — Mombasa Road" loading="lazy">
+          <div class="pbody">
+            <strong>Warehouse Fire Safety System — Mombasa Road</strong>
+            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Logistics • Location: Mombasa Road, Nairobi • Description: Addressable fire alarm system with 50 smoke detectors, manual call points, and sprinkler integration. Completed: Jun 2025</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" aria-label="product gallery">
+      <h3>Product Gallery</h3>
+      <div class="gallery-grid grid">
+        <!-- Gallery Item 1 -->
+        <a href="cctv-2.jpeg" class="gallery-item img-link">
+          <img src="cctv-2.jpeg" alt="CCTV Camera System" loading="lazy">
+          <div class="gallery-caption">CCTV Camera System</div>
+        </a>
+
+        <!-- Gallery Item 2 -->
+        <a href="alarm-system-2.jpeg" class="gallery-item img-link">
+          <img src="alarm-system-2.jpeg" alt="Alarm System Components" loading="lazy">
+          <div class="gallery-caption">Alarm System Components</div>
+        </a>
+
+        <!-- Gallery Item 3 -->
+        <a href="biometric.jpeg" class="gallery-item img-link">
+          <img src="biometric.jpeg" alt="Biometric Access Control" loading="lazy">
+          <div class="gallery-caption">Biometric Access Control</div>
+        </a>
+
+        <!-- Gallery Item 4 -->
+        <a href="electric-fence-2.jpeg" class="gallery-item img-link">
+          <img src="electric-fence-2.jpeg" alt="Electric Fence Installation" loading="lazy">
+          <div class="gallery-caption">Electric Fence Installation</div>
+        </a>
+
+        <!-- Gallery Item 5 -->
+        <a href="fire-maintenance.jpg" class="gallery-item img-link">
+          <img src="fire-maintenance.jpg" alt="Fire System Maintenance" loading="lazy">
+          <div class="gallery-caption">Fire System Maintenance</div>
+        </a>
+
+        <!-- Gallery Item 6 -->
+        <a href="consultations.jpg" class="gallery-item img-link">
+          <img src="consultations.jpg" alt="Security Consultation" loading="lazy">
+          <div class="gallery-caption">Security Consultation</div>
+        </a>
+      </div>
+
+      <!-- Videos Section -->
+      <h3 style="margin-top:2rem">Videos</h3>
+      <div class="gallery-grid grid">
+        <!-- Video Item 1 -->
+        <div class="gallery-item video-item" data-video-src="Automated Curtains 2.mp4" data-video-title="Automated Curtains Runda">
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains 2.mp4" type="video/mp4"></video>
+          <div class="gallery-caption">Automated Curtains Installations</div>
+        </div>
+
+        <!-- Video Item 2 -->
+        <div class="gallery-item video-item" data-video-src="Automated Curtains.mp4" data-video-title="Automated Curtains Kileleshwa">
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains.mp4" type="video/mp4"></video>
+          <div class="gallery-caption">Automated Curtains Demo</div>
+        </div>
+
+        <!-- Video Item 3 -->
+        <div class="gallery-item video-item" data-video-src="Control Panel.mp4" data-video-title="Curtains control Panel">
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Control Panel.mp4" type="video/mp4"></video>
+          <div class="gallery-caption">Curtains control Panel</div>
         </div>
       </div>
     </section>
@@ -635,103 +816,6 @@
             <h4>Malls</h4>
             <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Retail security solutions for shopping centers, including surveillance, crowd management, and fire safety systems.</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS / PORTFOLIO -->
-    <section id="projects" aria-label="projects">
-      <h3>Selected Projects</h3>
-      <div class="projects-grid grid">
-        <!-- Project 1 -->
-        <article class="project">
-          <img src="packgroup.jpg" alt="PackGroup CCTV system — Industrial Area" loading="lazy">
-          <div class="pbody">
-            <strong>PackGroup CCTV system — Industrial Area</strong>
-            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Business • Location: Industrial Area, Nairobi • Description: 22-camera HD system with remote access and night vision. Completed: Jan 2025</p>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project">
-          <img src="automatic.jpg" alt="Automated Fire extinguishers system — Athiriver" loading="lazy">
-          <div class="pbody">
-            <strong>Royal Mattresses Limited — Automatic Fire extinguishers</strong>
-            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Business • Location: Athiriver • Installation of 18 Automatic fire extinguishers. Completed: Mar 2025</p>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project">
-          <img src="electric-fence-2.jpeg" alt="Institutional perimeter security — Kiambu" loading="lazy">
-          <div class="pbody">
-            <strong>Institutional Perimeter Security</strong>
-            <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Institution • Location: Kiambu • Description: Electric fencing and alarm system with scheduled maintenance contract. Completed: Nov 2024</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" aria-label="product gallery">
-      <h3>Product Gallery</h3>
-      <div class="gallery-grid grid">
-        <!-- Gallery Item 1 -->
-        <a href="cctv-2.jpeg" class="gallery-item img-link">
-          <img src="cctv-2.jpeg" alt="CCTV Camera System" loading="lazy">
-          <div class="gallery-caption">CCTV Camera System</div>
-        </a>
-
-        <!-- Gallery Item 2 -->
-        <a href="alarm-system-2.jpeg" class="gallery-item img-link">
-          <img src="alarm-system-2.jpeg" alt="Alarm System Components" loading="lazy">
-          <div class="gallery-caption">Alarm System Components</div>
-        </a>
-
-        <!-- Gallery Item 3 -->
-        <a href="biometric.jpeg" class="gallery-item img-link">
-          <img src="biometric.jpeg" alt="Biometric Access Control" loading="lazy">
-          <div class="gallery-caption">Biometric Access Control</div>
-        </a>
-
-        <!-- Gallery Item 4 -->
-        <a href="electric-fence-2.jpeg" class="gallery-item img-link">
-          <img src="electric-fence-2.jpeg" alt="Electric Fence Installation" loading="lazy">
-          <div class="gallery-caption">Electric Fence Installation</div>
-        </a>
-
-        <!-- Gallery Item 5 -->
-        <a href="fire-maintenance.jpg" class="gallery-item img-link">
-          <img src="fire-maintenance.jpg" alt="Fire System Maintenance" loading="lazy">
-          <div class="gallery-caption">Fire System Maintenance</div>
-        </a>
-
-        <!-- Gallery Item 6 -->
-        <a href="consultations.jpg" class="gallery-item img-link">
-          <img src="consultations.jpg" alt="Security Consultation" loading="lazy">
-          <div class="gallery-caption">Security Consultation</div>
-        </a>
-      </div>
-
-      <!-- Videos Section -->
-      <h3 style="margin-top:2rem">Videos</h3>
-      <div class="gallery-grid grid">
-        <!-- Video Item 1 -->
-        <div class="gallery-item video-item" data-video-src="Automated Curtains 2.mp4" data-video-title="Automated Curtains Runda">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains 2.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Automated Curtains Installations</div>
-        </div>
-
-        <!-- Video Item 2 -->
-        <div class="gallery-item video-item" data-video-src="Automated Curtains.mp4" data-video-title="Automated Curtains Kileleshwa">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Automated Curtains Demo</div>
-        </div>
-
-        <!-- Video Item 3 -->
-        <div class="gallery-item video-item" data-video-src="Control Panel.mp4" data-video-title="Curtains control Panel">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Control Panel.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Curtains control Panel</div>
         </div>
       </div>
     </section>
@@ -1006,6 +1090,188 @@
           }
         });
       });
+    })();
+    /* --- New animation runtime: reveal on scroll, hero load, navbar hide/show --- */
+    (function(){
+      // Respect reduced motion
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // HERO: show on DOMContentLoaded (no layout shift)
+      function showHero(){
+        var hi = document.querySelector('.hero-intro');
+        if(!hi) return;
+        // small timeout to allow paint
+        requestAnimationFrame(function(){
+          hi.classList.add('is-visible');
+        });
+      }
+
+      // Reveal on scroll using IntersectionObserver (with grouped stagger timings)
+      function setupReveal(){
+        var selector = ['.card', '.service', '.project', '.gallery-item', '.stat-card', '.testi', '.faq-item', '.profile-card', '.pbody'].join(',');
+        var nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+        if(nodes.length === 0) return;
+        nodes.forEach(function(n){ n.classList.add('reveal-on-scroll'); });
+
+        if(reduce) {
+          // If user prefers reduced motion, reveal all immediately
+          nodes.forEach(function(n){ n.classList.add('in-view'); });
+          return;
+        }
+
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+            }
+          });
+        }, { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+        // Define groups and per-item stagger step (ms)
+        var groups = [
+          { sel: '.gallery-grid .gallery-item', step: 80 },
+          { sel: '.services-grid .service', step: 60 },
+          { sel: '.projects-grid .project', step: 90 },
+          { sel: '#testimonials .testi, .stats-grid .stat-card', step: 80 },
+          { sel: '.about-grid > *', step: 70 }
+        ];
+
+        // Apply stagger delays and observe grouped items
+        var groupedNodes = [];
+        groups.forEach(function(g){
+          var items = Array.prototype.slice.call(document.querySelectorAll(g.sel));
+          items.forEach(function(it, i){ it.style.transitionDelay = (i * g.step) + 'ms'; io.observe(it); groupedNodes.push(it); });
+        });
+
+        // Observe remaining nodes not part of the explicit groups
+        var groupedSet = new Set(groupedNodes);
+        nodes.filter(function(n){ return !groupedSet.has(n); }).forEach(function(n){ io.observe(n); });
+      }
+
+      // Navbar hide/show on scroll (small, efficient handler)
+      function setupNavbarAutoHide(){
+        var header = document.querySelector('header');
+        if(!header) return;
+        var lastY = window.scrollY || 0;
+        var ticking = false;
+
+        function update(){
+          var y = window.scrollY || 0;
+          if(Math.abs(y - lastY) < 8){ ticking = false; return; }
+          if(y > lastY && y > 80){ header.classList.add('nav-hidden'); }
+          else { header.classList.remove('nav-hidden'); }
+          lastY = y;
+          ticking = false;
+        }
+
+        window.addEventListener('scroll', function(){
+          if(ticking) return; ticking = true; requestAnimationFrame(update);
+        }, { passive: true });
+      }
+
+      // Add simple parallax on mousemove for larger screens (lightweight)
+      function setupParallax(){
+        if(window.innerWidth < 720) return; // skip on small devices
+        document.querySelectorAll('.parallax-img').forEach(function(wrapper){
+          var img = wrapper.querySelector('img');
+          if(!img) return;
+          wrapper.addEventListener('mousemove', function(e){
+            var rect = wrapper.getBoundingClientRect();
+            var dx = (e.clientX - rect.left) / rect.width - 0.5;
+            var dy = (e.clientY - rect.top) / rect.height - 0.5;
+            img.style.transform = 'scale(1.04) translate(' + (dx*6) + 'px, ' + (dy*6) + 'px)';
+          });
+          wrapper.addEventListener('mouseleave', function(){ img.style.transform = ''; });
+        });
+      }
+
+      // Lightweight service tilt on pointer move (desktop only)
+      function setupServiceTilt(){
+        if(window.innerWidth < 720) return;
+        document.querySelectorAll('.service').forEach(function(card){
+          var raf = null;
+          function onPointerMove(e){
+            if(raf) return;
+            raf = requestAnimationFrame(function(){
+              var rect = card.getBoundingClientRect();
+              var cx = rect.left + rect.width/2;
+              var cy = rect.top + rect.height/2;
+              var dx = (e.clientX - cx) / (rect.width/2);
+              var dy = (e.clientY - cy) / (rect.height/2);
+              var rx = (-dy * 3).toFixed(2);
+              var ry = (dx * 3).toFixed(2);
+              card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(0)';
+              raf = null;
+            });
+          }
+          card.addEventListener('pointermove', onPointerMove, { passive: true });
+          card.addEventListener('pointerleave', function(){ card.style.transform = ''; });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function(){
+        showHero();
+        setupReveal();
+        setupNavbarAutoHide();
+        if(!reduce) { setupParallax(); setupServiceTilt(); }
+      });
+    })();
+  </script>
+
+  <!-- Deferred libraries for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer crossorigin="anonymous"></script>
+
+  <script>
+    (function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function initLottie(){
+        if(reduce) return;
+        if(typeof lottie === 'undefined') return;
+        var container = document.getElementById('lottie-hero');
+        if(!container) return;
+        var obs = new IntersectionObserver(function(entries, o){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              try{
+                lottie.loadAnimation({ container: container, renderer: 'svg', loop: true, autoplay: true, path: 'https://assets9.lottiefiles.com/packages/lf20_tfb3estd.json' });
+              }catch(err){}
+              o.unobserve(container);
+            }
+          });
+        }, { root:null, threshold: 0.05 });
+        obs.observe(container);
+      }
+
+      function initParticles(){
+        if(reduce) return;
+        if(window.innerWidth < 720) return;
+        var hero = document.querySelector('.hero'); if(!hero) return;
+        var canvas = document.createElement('canvas'); canvas.id = 'hero-canvas';
+        canvas.style.position = 'absolute'; canvas.style.top='0'; canvas.style.left='0'; canvas.style.width='100%'; canvas.style.height='100%'; canvas.style.zIndex='0'; canvas.style.pointerEvents='none';
+        canvas.setAttribute('aria-hidden','true'); hero.insertBefore(canvas, hero.firstChild);
+        var ctx = canvas.getContext('2d'); var DPR = Math.max(1, window.devicePixelRatio || 1);
+        var particles = [];
+        function resize(){ canvas.width = Math.floor(canvas.clientWidth * DPR); canvas.height = Math.floor(canvas.clientHeight * DPR); ctx.setTransform(DPR,0,0,DPR,0,0); }
+        function createParticle(){ var w = canvas.clientWidth, h = canvas.clientHeight; return { x: Math.random()*w, y: Math.random()*h, r:1+Math.random()*2.8, vx:(Math.random()-0.5)*0.3, vy:-0.15-Math.random()*0.15, alpha:0.12+Math.random()*0.18 }; }
+        function init(){ resize(); particles = new Array(Math.min(60, Math.floor(canvas.clientWidth/12))).fill(0).map(createParticle); }
+        var last = performance.now(); function frame(now){ var dt = Math.min(40, now-last); last = now; ctx.clearRect(0,0,canvas.width,canvas.height); ctx.save(); ctx.globalCompositeOperation='lighter'; particles.forEach(function(p){ p.x += p.vx * dt * 0.06; p.y += p.vy * dt * 0.06; if(p.y + p.r < -10 || p.x < -20 || p.x > canvas.clientWidth + 20){ Object.assign(p, createParticle()); p.y = canvas.clientHeight + 10; } ctx.beginPath(); ctx.fillStyle = 'rgba(198,40,40,'+p.alpha+')'; ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); }); ctx.restore(); requestAnimationFrame(frame); }
+        window.addEventListener('resize', function(){ init(); }, { passive:true }); init(); requestAnimationFrame(frame);
+      }
+
+      function initGSAP(){
+        if(reduce) return; if(typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return; try{ gsap.registerPlugin(ScrollTrigger); }catch(e){}
+        var projects = document.querySelectorAll('.projects-grid .project'); if(!projects || projects.length===0) return;
+        var tl = gsap.timeline({ scrollTrigger: { trigger: '.projects-grid', start: 'top 75%', end: 'bottom 25%', scrub: 0.6 } });
+        tl.to('.projects-grid .project', { scale:1.03, y:-8, stagger:{ each:0.08 }, duration:0.8, ease:'power1.out' }, 0);
+        tl.to('.projects-grid .project', { scale:1, y:0, stagger:{ each:0.08 }, duration:0.8, ease:'power1.in' }, 0.6);
+      }
+
+      function whenLoaded(cb){ if(document.readyState==='complete') cb(); else window.addEventListener('load', cb); }
+      whenLoaded(function(){ setTimeout(function(){ initLottie(); initParticles(); initGSAP(); }, 260); });
     })();
   </script>
 </body>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BR Shield — QR Generator</title>
+  <style>
+    body{font-family:system-ui,Arial;max-width:900px;margin:40px auto;padding:20px}
+    textarea{width:100%;height:160px;font-family:monospace;margin-bottom:8px}
+    .row{display:flex;gap:8px;align-items:center}
+    button{padding:8px 12px;border-radius:8px;border:0;background:#0A2A4D;color:#fff}
+    .muted{color:#666;font-size:0.95rem}
+  </style>
+</head>
+<body>
+  <h2>BR Shield — QR Code Generator</h2>
+  <p class="muted">Generate a QR for the company vCard or website. Use the <strong>Generate & Download</strong> button to save a PNG.</p>
+
+  <label><strong>Type</strong></label>
+  <div class="row" style="margin-bottom:8px">
+    <select id="type">
+      <option value="vcard">vCard (recommended)</option>
+      <option value="url">Website URL</option>
+    </select>
+    <button id="gen">Generate & Download PNG</button>
+    <a id="download" style="margin-left:8px;display:none">Download</a>
+  </div>
+
+  <label><strong>Content</strong></label>
+  <textarea id="content"></textarea>
+
+  <div style="margin-top:16px">
+    <canvas id="qcanvas"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script>
+    // Default vCard content (matches BR-Shield.vcf)
+    const defaultVCard = `BEGIN:VCARD\nVERSION:3.0\nFN:BR Shield Solutions\nORG:BR Shield Solutions\nTITLE:Security & Fire Protection Services\nTEL;TYPE=WORK,VOICE:+254724533636\nTEL;TYPE=WORK,VOICE:+254101963655\nEMAIL;TYPE=INTERNET:brshieldsolutions@gmail.com\nURL:https://brshieldsolutions.co.ke\nADR;TYPE=WORK:;;Nairobi;;Kenya\nNOTE:Integrated security, fire safety & solar solutions — Nairobi, Kenya.\nEND:VCARD`;
+    const defaultURL = 'https://brshieldsolutions.co.ke';
+
+    const typeEl = document.getElementById('type');
+    const contentEl = document.getElementById('content');
+    const genBtn = document.getElementById('gen');
+    const canvas = document.getElementById('qcanvas');
+    const download = document.getElementById('download');
+
+    function setContentForType(){
+      if(typeEl.value === 'vcard') contentEl.value = defaultVCard; else contentEl.value = defaultURL;
+    }
+    typeEl.addEventListener('change', setContentForType);
+    setContentForType();
+
+    genBtn.addEventListener('click', async function(){
+      const text = contentEl.value.trim();
+      if(!text){ alert('Please enter content to encode.'); return; }
+      // generate onto canvas
+      try{
+        await QRCode.toCanvas(canvas, text, { width: 600, margin: 2, color: { dark: '#0A2A4D', light: '#ffffff' } });
+        // prepare download link
+        const dataUrl = canvas.toDataURL('image/png');
+        download.href = dataUrl;
+        download.download = 'BR-Shield-QR.png';
+        download.textContent = 'Right-click → Save image as, or click to open';
+        download.style.display = 'inline-block';
+        download.addEventListener('click', function(){ /* default behaviour opens image */ });
+      }catch(err){ alert('QR generation failed: '+err.message); }
+    });
+
+    // auto-generate on load
+    window.addEventListener('load', function(){ genBtn.click(); });
+  </script>
+</body>
+</html>
