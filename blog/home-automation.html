@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Beginner’s guide to smart home security systems in Kenya including smart CCTV, locks, alarms, lighting and mobile integration.">
+<title>Smart Home Security 101 | BIO RAY LIMITED</title>
+<style>
+  :root{
+    --navy:#0A2A4D;
+    --teal:#006064;
+    --accent:#14b8a6;
+    --bg:#e0f7fa;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background:radial-gradient(circle at top,#ccfbf1,#e0f7fa 45%,#f9fafb);
+    color:#0f172a;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    background:linear-gradient(135deg,var(--teal),#00363a);
+    color:#ecfeff;
+    text-align:center;
+    padding:2.2rem 1.25rem 1.7rem;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 16px 45px rgba(0,96,100,0.4);
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    right:-80px;
+    top:-70px;
+    width:230px;
+    height:230px;
+    background:radial-gradient(circle at center,rgba(20,184,166,0.6),transparent 65%);
+  }
+  header h1{
+    margin:0;
+    font-size:1.85rem;
+  }
+  header p{
+    margin:0.55rem auto 0;
+    max-width:640px;
+    color:#e0f2f1;
+    font-size:0.97rem;
+  }
+  nav{
+    margin-top:0.9rem;
+    font-size:0.9rem;
+  }
+  nav a{
+    color:#e0f7fa;
+    margin:0 0.45rem;
+    font-weight:500;
+    text-decoration:none;
+  }
+  nav a:hover{text-decoration:underline;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
+    margin-top:0.85rem;
+    padding:0.18rem 0.75rem;
+    border-radius:999px;
+    background:rgba(15,118,110,0.2);
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  main{
+    max-width:960px;
+    margin:1.9rem auto 2.5rem;
+    padding:0 1.1rem;
+  }
+  .article-card{
+    background:var(--card);
+    border-radius:16px;
+    padding:1.6rem 1.5rem 1.9rem;
+    box-shadow:0 18px 55px rgba(15,23,42,0.16);
+    border:1px solid rgba(15,23,42,0.06);
+    position:relative;
+    overflow:hidden;
+    transform:translateY(10px);
+    opacity:0;
+    animation:fadeUp 520ms ease-out forwards;
+  }
+  .article-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(20,184,166,0.05),rgba(56,189,248,0.04));
+    opacity:0;
+    transition:opacity 260ms ease;
+    pointer-events:none;
+  }
+  .article-card:hover::before{opacity:1;}
+  .lede{
+    font-size:0.98rem;
+    color:#475569;
+    margin-bottom:1.2rem;
+  }
+  h2{
+    color:var(--navy);
+    margin:1.4rem 0 0.35rem;
+    font-size:1.12rem;
+  }
+  .tag{
+    display:inline-block;
+    margin-right:0.4rem;
+    padding:0.08rem 0.55rem;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-radius:999px;
+    background:rgba(20,184,166,0.12);
+    color:#0f766e;
+  }
+  ul{
+    margin:0.4rem 0 0.9rem 1.2rem;
+    padding:0;
+  }
+  li{margin-bottom:0.25rem;}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1rem;
+    margin-top:0.5rem;
+  }
+  .feature{
+    padding:0.85rem 0.9rem;
+    border-radius:12px;
+    background:#f0fdfa;
+    border:1px solid rgba(20,184,166,0.35);
+    font-size:0.9rem;
+  }
+  .feature strong{display:block;margin-bottom:0.3rem;}
+  .scenario{
+    margin-top:1.2rem;
+    padding:0.9rem 1rem;
+    border-radius:12px;
+    background:#eff6ff;
+    border:1px solid rgba(59,130,246,0.4);
+    font-size:0.9rem;
+    color:#1d4ed8;
+  }
+  .cta-row{
+    margin-top:1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    align-items:center;
+  }
+  a.button{
+    background:var(--teal);
+    color:#fff;
+    padding:0.7rem 1.25rem;
+    border-radius:999px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 12px 35px rgba(0,96,100,0.55);
+    transition:transform 200ms ease,box-shadow 200ms ease,background 200ms ease;
+  }
+  a.button.secondary{
+    background:#ffffff;
+    color:var(--teal);
+    border:1px solid rgba(0,96,100,0.5);
+    box-shadow:none;
+  }
+  a.button:hover{
+    background:#004d40;
+    transform:translateY(-2px);
+    box-shadow:0 18px 45px rgba(0,96,100,0.7);
+    text-decoration:none;
+  }
+  a.button.secondary:hover{
+    background:#ecfdf3;
+    box-shadow:0 12px 35px rgba(34,197,94,0.35);
+  }
+  footer{
+    background:#00363a;
+    color:#e0f2f1;
+    text-align:center;
+    padding:1.15rem 1rem 1.4rem;
+    font-size:0.9rem;
+  }
+  footer a{
+    color:#a5f3fc;
+    text-decoration:none;
+    font-weight:500;
+  }
+  footer a:hover{text-decoration:underline;}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media(max-width:680px){
+    header{
+      padding:1.8rem 1rem 1.4rem;
+    }
+    header h1{
+      font-size:1.55rem;
+    }
+    .article-card{
+      padding:1.25rem 1rem 1.5rem;
+      border-radius:14px;
+    }
+    .card-grid{
+      grid-template-columns:1fr;
+    }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;}
+    .article-card{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Smart Home Security 101</h1>
+  <p>How to combine smart cameras, locks, lighting and alarms so you can see and control your home from anywhere.</p>
+  <div class="badge">Smart home • Beginner friendly</div>
+  <nav>
+    <a href="/index.html">Main website</a> • <a href="/index.html#services">Smart home solutions</a> • <a href="/blog/index.html">All articles</a>
+  </nav>
+</header>
+
+<main>
+  <article class="article-card">
+    <p class="lede"><strong>Good to know:</strong> You don’t have to make your whole home “smart” at once. In most Kenyan homes we start with one or two priority areas, then expand over time.</p>
+
+    <h2><span class="tag">1</span>Smart CCTV systems</h2>
+    <p>Modern cameras do more than record to a hard drive. When installed correctly, they act as both a deterrent and an investigation tool.</p>
+    <ul>
+      <li>Choose cameras with <strong>night vision</strong> and good low‑light performance.</li>
+      <li>Enable <strong>motion alerts</strong> only on key zones (gate, doors, parking) to avoid constant notifications.</li>
+      <li>Use <strong>cloud backup or remote access</strong> so you can still view footage even if the recorder is damaged or stolen.</li>
+    </ul>
+
+    <h2><span class="tag">2</span>Smart door locks &amp; access</h2>
+    <div class="card-grid">
+      <div class="feature">
+        <strong>What they can do</strong>
+        <p>Open via PIN, card, fingerprint or phone; create temporary visitor codes; see who entered and when.</p>
+      </div>
+      <div class="feature">
+        <strong>Where they work best</strong>
+        <p>Main doors, apartment doors, and office entrances where many people share access.</p>
+      </div>
+    </div>
+    <p>For rentals, we usually recommend non‑destructive smart locks that can be removed when you move out.</p>
+
+    <h2><span class="tag">3</span>Smart lighting &amp; motion sensors</h2>
+    <p>Lighting is one of the cheapest upgrades with the biggest impact on security.</p>
+    <ul>
+      <li>Use <strong>motion‑activated lights</strong> near gates, parking and corridors.</li>
+      <li>Set simple <strong>“away” scenes</strong> so some lights turn on automatically in the evening when you travel.</li>
+      <li>Combine sensors with cameras: when motion is detected, the nearest camera can start recording at higher quality.</li>
+    </ul>
+
+    <h2><span class="tag">4</span>Smart alarms &amp; sensors</h2>
+    <p>Instead of one big alarm panel hidden in a cupboard, small wireless sensors can be placed on doors, windows and key areas.</p>
+    <ul>
+      <li>Receive alerts on your phone when doors or windows are opened unexpectedly.</li>
+      <li>Arm different “modes” (night mode, away mode) depending on who is at home.</li>
+      <li>Integrate with sirens, lights and CCTV for a coordinated response.</li>
+    </ul>
+
+    <h2><span class="tag">5</span>Mobile app &amp; ecosystem</h2>
+    <p>To keep things simple, we prefer building around <strong>one main app</strong> that controls most of your devices instead of five separate apps.</p>
+    <ul>
+      <li>Pick devices that support the same platform (e.g. Tuya, Google, or the brand’s own ecosystem).</li>
+      <li>Ensure the app supports <strong>multiple users</strong> so family members or guards can have their own logins.</li>
+      <li>Ask about <strong>data usage</strong> — especially if your home internet has a limited bundle.</li>
+    </ul>
+
+    <div class="scenario">
+      <strong>Example project: 3‑bedroom home in Nairobi</strong><br />
+      Start with: 3–4 smart cameras (gate, back, corridor, sitting room) + smart lock on the main door + motion‑sensor floodlight at the gate. Later, add smart plugs and scenes for lights and TV.
+    </div>
+
+    <div class="cta-row">
+      <a href="/index.html#contact" class="button">Request a smart home plan for your house</a>
+      <a href="/blog/index.html" class="button secondary">Back to all articles</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 BIO RAY LIMITED | Nairobi, Kenya • <a href="/index.html#contact">Talk to our smart home team</a>
+</footer>
+
+</body>
+</html>

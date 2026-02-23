@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Practical fire extinguisher guide for Kenyan homes and businesses: fire classes, extinguisher types, and simple safety routines.">
+<title>Fire Extinguisher &amp; Fire Safety Guide | BIO RAY LIMITED</title>
+<style>
+  :root{
+    --navy:#0A2A4D;
+    --orange:#F57C00;
+    --red:#C62828;
+    --bg:#fff7ed;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background:radial-gradient(circle at top,#ffe0c2,#fff7ed 45%,#ffffff);
+    color:#1f2933;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    background:linear-gradient(135deg,#ff7043,#d84315);
+    color:#fff;
+    text-align:center;
+    padding:2.2rem 1.25rem 1.7rem;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 14px 40px rgba(216,67,21,0.4);
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    right:-80px;
+    top:-60px;
+    width:220px;
+    height:220px;
+    background:radial-gradient(circle at center,rgba(255,255,255,0.5),transparent 65%);
+    opacity:0.9;
+  }
+  header h1{
+    margin:0;
+    font-size:1.85rem;
+  }
+  header p{
+    margin:0.5rem auto 0;
+    max-width:620px;
+    color:#ffeae1;
+    font-size:0.97rem;
+  }
+  nav{
+    margin-top:0.9rem;
+    font-size:0.9rem;
+  }
+  nav a{
+    color:#fff3e0;
+    margin:0 0.4rem;
+    font-weight:500;
+    text-decoration:none;
+  }
+  nav a:hover{text-decoration:underline;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
+    margin-top:0.85rem;
+    padding:0.18rem 0.75rem;
+    border-radius:999px;
+    background:rgba(0,0,0,0.12);
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  main{
+    max-width:960px;
+    margin:1.9rem auto 2.5rem;
+    padding:0 1.1rem;
+  }
+  .article-card{
+    background:var(--card);
+    border-radius:16px;
+    padding:1.6rem 1.5rem 1.9rem;
+    box-shadow:0 18px 55px rgba(15,23,42,0.16);
+    border:1px solid rgba(15,23,42,0.06);
+    position:relative;
+    overflow:hidden;
+    transform:translateY(10px);
+    opacity:0;
+    animation:fadeUp 520ms ease-out forwards;
+  }
+  .article-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(245,124,0,0.05),rgba(198,40,40,0.04));
+    opacity:0;
+    transition:opacity 260ms ease;
+    pointer-events:none;
+  }
+  .article-card:hover::before{opacity:1;}
+  .lede{
+    font-size:0.98rem;
+    color:#475569;
+    margin-bottom:1.2rem;
+  }
+  h2{
+    color:var(--navy);
+    margin:1.4rem 0 0.35rem;
+    font-size:1.1rem;
+  }
+  .tag{
+    display:inline-block;
+    margin-right:0.4rem;
+    padding:0.08rem 0.55rem;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-radius:999px;
+    background:rgba(198,40,40,0.08);
+    color:var(--red);
+  }
+  ul{
+    margin:0.4rem 0 0.9rem 1.2rem;
+    padding:0;
+  }
+  li{margin-bottom:0.25rem;}
+  .matrix{
+    display:grid;
+    grid-template-columns:1.3fr 1.7fr;
+    gap:0.8rem 1.4rem;
+    margin-top:0.6rem;
+  }
+  .matrix-box{
+    padding:0.7rem 0.85rem;
+    border-radius:10px;
+    background:#fff7ed;
+    border:1px dashed rgba(245,124,0,0.5);
+    font-size:0.9rem;
+  }
+  .matrix-box strong{display:block;margin-bottom:0.25rem;}
+  .callout{
+    margin-top:1.2rem;
+    padding:0.9rem 1rem;
+    border-radius:12px;
+    background:#fef2f2;
+    border:1px solid rgba(248,113,113,0.6);
+    font-size:0.9rem;
+    color:#b91c1c;
+  }
+  .routine{
+    margin-top:1.4rem;
+    padding:0.85rem 1rem;
+    border-radius:12px;
+    background:#ecfdf3;
+    border:1px solid rgba(22,163,74,0.48);
+    font-size:0.9rem;
+    color:#14532d;
+  }
+  .cta-row{
+    margin-top:1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    align-items:center;
+  }
+  a.button{
+    background:var(--orange);
+    color:#fff;
+    padding:0.7rem 1.25rem;
+    border-radius:999px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 12px 35px rgba(245,124,0,0.55);
+    transition:transform 200ms ease,box-shadow 200ms ease,background 200ms ease;
+  }
+  a.button.secondary{
+    background:#ffffff;
+    color:var(--orange);
+    border:1px solid rgba(245,124,0,0.6);
+    box-shadow:none;
+  }
+  a.button:hover{
+    background:#ef6c00;
+    transform:translateY(-2px);
+    box-shadow:0 18px 45px rgba(245,124,0,0.7);
+    text-decoration:none;
+  }
+  a.button.secondary:hover{
+    background:#fff7ed;
+    box-shadow:0 12px 35px rgba(245,124,0,0.35);
+  }
+  footer{
+    background:#d84315;
+    color:#ffebee;
+    text-align:center;
+    padding:1.15rem 1rem 1.4rem;
+    font-size:0.9rem;
+  }
+  footer a{
+    color:#ffe082;
+    text-decoration:none;
+    font-weight:500;
+  }
+  footer a:hover{text-decoration:underline;}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media(max-width:680px){
+    header{
+      padding:1.8rem 1rem 1.4rem;
+    }
+    header h1{
+      font-size:1.55rem;
+    }
+    .article-card{
+      padding:1.25rem 1rem 1.5rem;
+      border-radius:14px;
+    }
+    .matrix{
+      grid-template-columns:1fr;
+    }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;}
+    .article-card{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Fire Extinguisher &amp; Fire Safety Guide</h1>
+  <p>Understand fire classes, extinguisher types and simple routines that keep your home or business in Kenya safer and compliant.</p>
+  <div class="badge">Fire safety • Practical checklist</div>
+  <nav>
+    <a href="/index.html">Main website</a> • <a href="/index.html#services">Fire solutions</a> • <a href="/blog/index.html">All articles</a>
+  </nav>
+</header>
+
+<main>
+  <article class="article-card">
+    <p class="lede"><strong>Why this matters:</strong> Many premises in Kenya have extinguishers on the wall but staff are not sure which one to use — or the gauge is already in the red. This guide is written from real inspections we carry out in schools, offices and apartments.</p>
+
+    <h2><span class="tag">Step 1</span>Know your fire classes</h2>
+    <p>Different materials burn differently. Using the wrong extinguisher can make a fire worse or put the operator in danger.</p>
+    <ul>
+      <li><strong>Class A</strong> – Ordinary combustibles: wood, paper, furniture, textiles.</li>
+      <li><strong>Class B</strong> – Flammable liquids: petrol, diesel, paints, thinners.</li>
+      <li><strong>Class C</strong> – Electrical fires: distribution boards, sockets, appliances.</li>
+      <li><strong>Class D</strong> – Metal fires: magnesium, aluminium shavings (mainly industrial).</li>
+      <li><strong>Class F/K</strong> – Cooking oils and fats: commercial and home kitchens.</li>
+    </ul>
+
+    <h2><span class="tag">Step 2</span>Match extinguisher type to the risk</h2>
+    <p>Below is a quick matrix we use when recommending extinguishers during site surveys.</p>
+    <div class="matrix">
+      <div class="matrix-box">
+        <strong>Water</strong>
+        <p>Best for Class A (offices, corridors, stores with paper and furniture). <strong>Never</strong> use on electrical or oil fires.</p>
+      </div>
+      <div class="matrix-box">
+        <strong>Foam (A/B)</strong>
+        <p>Good for petrol stations, workshops, parking areas with fuel risk. Also works on many Class A fires.</p>
+      </div>
+      <div class="matrix-box">
+        <strong>CO₂</strong>
+        <p>Ideal for electrical fires: server rooms, distribution boards, office electronics. Leaves no residue.</p>
+      </div>
+      <div class="matrix-box">
+        <strong>Dry Powder</strong>
+        <p>Multi‑purpose option where you have mixed risks (A, B, C). Common for small businesses and compounds.</p>
+      </div>
+      <div class="matrix-box">
+        <strong>Wet Chemical</strong>
+        <p>Designed for deep‑fat fryers and kitchens (Class F). Common in hotels, schools and restaurants.</p>
+      </div>
+    </div>
+
+    <h2><span class="tag">Step 3</span>Use the PASS method (and stay safe)</h2>
+    <p>Before attempting to fight a fire, always raise the alarm, confirm you have a clear exit route, and never turn your back on the fire.</p>
+    <ul>
+      <li><strong>P – Pull</strong> the pin to break the seal.</li>
+      <li><strong>A – Aim</strong> low at the base of the fire, not the flames.</li>
+      <li><strong>S – Squeeze</strong> the handle to release the agent.</li>
+      <li><strong>S – Sweep</strong> side to side until the fire is completely out.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Important:</strong> If the fire is bigger than you, spreading quickly, or filling the room with smoke, evacuate immediately and call the fire brigade. Equipment can be replaced — lives cannot.
+    </div>
+
+    <h2><span class="tag">Step 4</span>Simple monthly safety routine</h2>
+    <div class="routine">
+      <strong>Once a month, walk through your premises and check:</strong>
+      <ul>
+        <li>Extinguishers are accessible, not blocked by furniture or stock.</li>
+        <li>The pressure gauge is in the green zone.</li>
+        <li>Service tag is valid and within the recommended service interval.</li>
+        <li>Exit routes and assembly points are clearly marked.</li>
+        <li>New staff know where extinguishers and alarms are located.</li>
+      </ul>
+      For schools, hotels and factories, we also recommend an annual fire drill.
+    </div>
+
+    <div class="cta-row">
+      <a href="/index.html#contact" class="button">Book a fire audit / extinguisher service</a>
+      <a href="/blog/index.html" class="button secondary">Back to all articles</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 BIO RAY LIMITED | Nairobi, Kenya • <a href="/index.html#contact">Talk to our fire team</a>
+</footer>
+
+</body>
+</html>

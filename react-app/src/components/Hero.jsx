@@ -24,7 +24,7 @@ export default function Hero(){
           <LottieHero path={'https://assets9.lottiefiles.com/packages/lf20_tfb3estd.json'} />
           <div style={{display:'flex',gap:12,alignItems:'center'}}>
             <div style={{width:64,height:64,borderRadius:10,background:'linear-gradient(135deg,var(--navy),var(--red))',display:'flex',alignItems:'center',justifyContent:'center'}}>
-              <img src="/logo.png" alt="logo" style={{width:56,height:56,objectFit:'contain'}} />
+              <img src="/logo2.png" alt="logo" style={{width:56,height:56,objectFit:'contain'}} />
             </div>
             <div>
               <div style={{fontWeight:700,color:'var(--navy)'}}>BR Shield Solutions</div>

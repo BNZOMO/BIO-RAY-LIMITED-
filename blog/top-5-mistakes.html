@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover the top 5 home security mistakes we see in Kenyan homes and what to do instead — with simple, practical fixes.">
+<title>Top 5 Home Security Mistakes (Kenyan context) | BIO RAY LIMITED</title>
+<style>
+  :root{
+    --navy:#0A2A4D;
+    --teal:#00796b;
+    --accent:#F57C00;
+    --danger:#C62828;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background:radial-gradient(circle at top left,#e0f2f1,#f5f7fb 50%,#ffffff);
+    color:#1f2933;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    background:linear-gradient(135deg,var(--teal),#004d40);
+    color:#fff;
+    text-align:center;
+    padding:2.3rem 1.25rem 1.7rem;
+    box-shadow:0 14px 40px rgba(0,96,100,0.35);
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    inset:auto -80px -120px auto;
+    width:220px;
+    height:220px;
+    background:radial-gradient(circle at center,rgba(245,124,0,0.6),transparent 65%);
+    opacity:0.8;
+  }
+  header h1{
+    margin:0;
+    font-size:1.9rem;
+    letter-spacing:0.02em;
+  }
+  header p{
+    margin:0.6rem auto 0;
+    max-width:640px;
+    color:rgba(226,243,245,0.9);
+    font-size:0.98rem;
+  }
+  nav{
+    margin-top:0.9rem;
+    font-size:0.9rem;
+  }
+  nav a{
+    color:#e0f7fa;
+    margin:0 0.4rem;
+    font-weight:500;
+    text-decoration:none;
+  }
+  nav a:hover{text-decoration:underline;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
+    margin-top:0.9rem;
+    padding:0.18rem 0.75rem;
+    border-radius:999px;
+    background:rgba(15,118,110,0.18);
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:#e0f2f1;
+  }
+  main{
+    max-width:960px;
+    margin:1.8rem auto 2.4rem;
+    padding:0 1.1rem;
+  }
+  .article-card{
+    background:var(--card);
+    border-radius:16px;
+    padding:1.6rem 1.5rem 1.8rem;
+    box-shadow:0 16px 45px rgba(15,23,42,0.14);
+    border:1px solid rgba(15,23,42,0.06);
+    position:relative;
+    overflow:hidden;
+    transform:translateY(10px);
+    opacity:0;
+    animation:fadeUp 520ms ease-out forwards;
+  }
+  .article-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(10,42,77,0.02),rgba(245,124,0,0.04));
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 260ms ease;
+  }
+  .article-card:hover::before{opacity:1;}
+  .lede{
+    font-size:0.98rem;
+    color:#475569;
+    margin-bottom:1.2rem;
+  }
+  h2{
+    color:var(--navy);
+    margin:1.6rem 0 0.3rem;
+    font-size:1.15rem;
+  }
+  h2 span.tag{
+    display:inline-block;
+    margin-right:0.4rem;
+    padding:0.08rem 0.55rem;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    border-radius:999px;
+    background:rgba(198,40,40,0.08);
+    color:var(--danger);
+  }
+  .mistake{
+    margin:1rem 0 1.1rem;
+    padding:0.75rem 0.9rem;
+    border-left:3px solid rgba(198,40,40,0.55);
+    background:#fff7f7;
+    border-radius:10px;
+  }
+  .fix{
+    margin:0.4rem 0 0.6rem;
+    padding:0.7rem 0.85rem;
+    border-radius:10px;
+    background:#ecfdf3;
+    border:1px dashed rgba(22,163,74,0.35);
+    font-size:0.92rem;
+    color:#14532d;
+  }
+  .context{
+    font-size:0.9rem;
+    color:#64748b;
+    margin-top:0.2rem;
+  }
+  ul{
+    margin:0.4rem 0 0.9rem 1.2rem;
+    padding:0;
+  }
+  li{margin-bottom:0.2rem;}
+  .callout{
+    margin-top:1.4rem;
+    padding:0.85rem 1rem;
+    border-radius:12px;
+    background:#eff6ff;
+    border:1px solid rgba(37,99,235,0.28);
+    font-size:0.9rem;
+    color:#1d4ed8;
+  }
+  .cta-row{
+    margin-top:1.4rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.7rem;
+    align-items:center;
+  }
+  a.button{
+    background:var(--teal);
+    color:#fff;
+    padding:0.7rem 1.2rem;
+    border-radius:999px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(0,96,100,0.35);
+    transition:transform 200ms ease,box-shadow 200ms ease,background 200ms ease;
+  }
+  a.button.secondary{
+    background:#ffffff;
+    color:var(--teal);
+    border:1px solid rgba(0,96,100,0.4);
+    box-shadow:none;
+  }
+  a.button:hover{
+    background:#005249;
+    transform:translateY(-2px);
+    box-shadow:0 16px 40px rgba(0,96,100,0.4);
+    text-decoration:none;
+  }
+  a.button.secondary:hover{
+    background:#ecfdf3;
+    box-shadow:0 10px 30px rgba(22,163,74,0.25);
+  }
+  footer{
+    background:#004d40;
+    color:#e0f2f1;
+    text-align:center;
+    padding:1.1rem 1rem 1.35rem;
+    font-size:0.9rem;
+  }
+  footer a{
+    color:#a5f3fc;
+    text-decoration:none;
+    font-weight:500;
+  }
+  footer a:hover{text-decoration:underline;}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media(max-width:640px){
+    header{
+      padding:1.8rem 1rem 1.4rem;
+    }
+    header h1{
+      font-size:1.55rem;
+    }
+    .article-card{
+      padding:1.2rem 1rem 1.4rem;
+      border-radius:14px;
+    }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;}
+    .article-card{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Top 5 Home Security Mistakes</h1>
+  <p>What we keep seeing during site visits in Nairobi, estates and apartments across Kenya — and how to fix it in a practical way.</p>
+  <div class="badge">Security tips • Home &amp; small business</div>
+  <nav>
+    <a href="/index.html">Main website</a> • <a href="/index.html#services">Services</a> • <a href="/blog/index.html">All articles</a>
+  </nav>
+</header>
+
+<main>
+  <article class="article-card">
+    <p class="lede"><strong>Quick overview:</strong> Most break-ins we investigate are not because of “sophisticated criminals” — they happen because of basic gaps. Use this list as a checklist when you walk around your home or apartment.</p>
+
+    <h2><span class="tag">Mistake 1</span>Relying only on a single lock or padlock</h2>
+    <div class="mistake">
+      Many homes depend on one padlock at the gate or door. Once that lock is cut, there is nothing else slowing down entry.
+      <p class="context">We often see this in apartments with metal doors, rental bedsitters, and rural homes with simple wooden doors.</p>
+    </div>
+    <div class="fix">
+      <strong>Better approach:</strong> Combine at least three layers:
+      <ul>
+        <li>Strong door/frame with internal deadbolt (not just padlocks outside).</li>
+        <li>Basic alarm or magnetic contact on the door that can trigger a siren.</li>
+        <li>CCTV watching the door/gate so activity is recorded and visible on your phone.</li>
+      </ul>
+      If you are on a budget, start with the most vulnerable entrance (usually the back door or main gate).
+    </div>
+
+    <h2><span class="tag">Mistake 2</span>Poor or no outdoor lighting</h2>
+    <div class="mistake">
+      Dark corners, side passages and parking areas give intruders confidence to move without being seen.
+      <p class="context">We see this a lot in townhouses and gated communities where common areas are lit, but private compounds are very dark.</p>
+    </div>
+    <div class="fix">
+      <strong>Better approach:</strong> Use a mix of:
+      <ul>
+        <li>Motion-sensor lights near gates, doors and parking.</li>
+        <li>Solar floodlights to cover blind spots without adding wiring.</li>
+        <li>Positioning lights so they don’t shine directly into cameras.</li>
+      </ul>
+      With good lighting, your CCTV footage becomes much clearer and criminals are more likely to move on.
+    </div>
+
+    <h2><span class="tag">Mistake 3</span>Ignoring blind spots in CCTV coverage</h2>
+    <div class="mistake">
+      Cameras are only facing the front gate and sitting room, while intruders use side fences, back doors or rooftops.
+      <p class="context">During audits, we often find entire sides of the house, water tank areas or servant quarters not covered at all.</p>
+    </div>
+    <div class="fix">
+      <strong>Better approach:</strong>
+      <ul>
+        <li>Walk around the compound and list all possible entry points (gate, doors, windows, fences, rooftop access).</li>
+        <li>Ensure every entry has at least one camera or is covered by a camera nearby.</li>
+        <li>Use wide-angle cameras on corners to cover two sides instead of placing cameras in the middle of a wall.</li>
+      </ul>
+      A short site survey from a professional can help redesign your layout without necessarily adding many new cameras.
+    </div>
+
+    <h2><span class="tag">Mistake 4</span>Sharing travel plans and valuables online</h2>
+    <div class="mistake">
+      Posting that you are “out of town for the weekend” or showing new electronics and cash on social media can unintentionally inform would‑be intruders.
+    </div>
+    <div class="fix">
+      <strong>Better approach:</strong>
+      <ul>
+        <li>Post trip photos after you return, not while you are away.</li>
+        <li>Share sensitive updates (e.g. travel, deliveries of electronics) only in private groups, not public timelines.</li>
+        <li>Combine this with simple physical measures: neighbour awareness, guard coordination and camera coverage.</li>
+      </ul>
+    </div>
+
+    <h2><span class="tag">Mistake 5</span>Installing systems but never maintaining them</h2>
+    <div class="mistake">
+      Cameras stop recording because the hard drive is full, alarm sirens fail, or extinguishers expire — but nobody notices until there is an incident.
+      <p class="context">We regularly find systems that were installed three or four years ago but have never been serviced.</p>
+    </div>
+    <div class="fix">
+      <strong>Better approach:</strong>
+      <ul>
+        <li>Schedule a quarterly or bi‑annual maintenance visit with a service provider.</li>
+        <li>Test alarms, review camera recordings and confirm that night vision is working.</li>
+        <li>Log any changes (new tenants, new access points, renovations) and adjust coverage accordingly.</li>
+      </ul>
+      A simple maintenance contract is usually cheaper than replacing damaged equipment after a break‑in or fire.
+    </div>
+
+    <div class="callout">
+      <strong>Tip:</strong> Walk through this checklist with your family or staff. Assign one person to be responsible for “security housekeeping” every month.
+    </div>
+
+    <div class="cta-row">
+      <a href="/index.html#contact" class="button">Request a free basic security walk‑through</a>
+      <a href="/blog/index.html" class="button secondary">Back to all articles</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  &copy; 2026 BIO RAY LIMITED | Nairobi, Kenya • <a href="/index.html#contact">Talk to our team</a>
+</footer>
+
+</body>
+</html>
