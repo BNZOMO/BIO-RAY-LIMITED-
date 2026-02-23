@@ -651,14 +651,45 @@
   <div style="position:relative;width:100%;overflow:hidden;">
     <!-- Preload background video for faster start -->
     <link rel="preload" as="video" href="Solar Background video.mp4" type="video/mp4">
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;" loading="lazy">
-      <source src="Solar Background video.mp4" type="video/mp4">
-      <!-- Static fallback image for mobile/slow connections -->
-      <img src="Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;" />
-    </video>
+    <!-- Responsive background: video for desktop, static image for mobile -->
+    <div id="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;" loading="lazy">
+        <source src="Solar Background video.mp4" type="video/mp4">
+        <img src="Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;" />
+      </video>
+      <img id="hero-static" src="Solar Background Poster.jpg" alt="Solar Background" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+    </div>
     <noscript>
       <img src="Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:0;" />
     </noscript>
+    <script>
+      // Show static image for mobile, video for desktop
+      (function(){
+        var isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+        var video = document.querySelector('.hero-video');
+        var img = document.getElementById('hero-static');
+        if(isMobile){
+          if(video) video.style.display = 'none';
+          if(img) img.style.display = 'block';
+        }else{
+          if(video) video.style.display = 'block';
+          if(img) img.style.display = 'none';
+        }
+      })();
+    </script>
+    <!-- Optimization Instructions (not visible to users) -->
+    <!--
+    Compress all images using TinyPNG, Squoosh, or convert to WebP:
+      - logo2.png, qr-vcard.png, director-1.jpg, cctv-2.jpeg, solar panels.jpg, alarm-system-2.jpeg, electric-fence-2.jpeg, fire-maintenance.jpg, smart homes.jpeg, packgroup.jpg, automatic.jpg, Solar Heaters.jpeg, Solar shed.jpg, fire-maintenance.jpg, biometric.jpeg, consultations.jpg, Parkgroup.jpeg, Anthena School.jpeg, Solar water heater.jpeg, qr-site.png, QR CODE.png
+
+    Compress all videos using HandBrake or similar:
+      - Solar Background video.mp4, Automated Curtains 2.mp4, Automated Curtains.mp4, Control Panel.mp4
+
+    Remove unused CSS/JS:
+      - Delete or comment out any styles/scripts not referenced in the HTML.
+      - Minimize inline CSS and scripts.
+      - Use tools like PurgeCSS for automated removal.
+    -->
     <main id="home" class="container" style="position:relative;z-index:1;">
       <section class="hero" aria-label="hero">
         <div class="hero-intro">
@@ -1730,21 +1761,16 @@
 
   <!-- Deferred libraries for advanced animations -->
   <!-- Only load heavy animation libraries on non-mobile, non-reduced-motion devices -->
+  <!-- Minimized animation script loader -->
   <script>
     (function(){
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
       var isSmallScreen = Math.min(window.innerWidth, window.innerHeight) < 768;
       if(!reduce && !isTouch && !isSmallScreen){
-        var s1 = document.createElement('script');
-        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js';
-        s1.defer = true; s1.crossOrigin = 'anonymous'; document.body.appendChild(s1);
-        var s2 = document.createElement('script');
-        s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
-        s2.defer = true; s2.crossOrigin = 'anonymous'; document.body.appendChild(s2);
-        var s3 = document.createElement('script');
-        s3.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
-        s3.defer = true; s3.crossOrigin = 'anonymous'; document.body.appendChild(s3);
+        ['https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js','https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js','https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'].forEach(function(src){
+          var s = document.createElement('script'); s.src = src; s.defer = true; s.crossOrigin = 'anonymous'; document.body.appendChild(s);
+        });
       }
     })();
   </script>
