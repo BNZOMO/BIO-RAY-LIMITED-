@@ -162,7 +162,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-fill-color: transparent;
       margin-bottom: 1.3rem;
     }
     .tagline{
@@ -650,7 +649,16 @@
 
   <!-- HERO + CONTACT CARD with background video -->
   <div style="position:relative;width:100%;overflow:hidden;">
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;"><source src="Solar Background video.mp4" type="video/mp4"></video>
+    <!-- Preload background video for faster start -->
+    <link rel="preload" as="video" href="Solar Background video.mp4" type="video/mp4">
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;" loading="lazy">
+      <source src="Solar Background video.mp4" type="video/mp4">
+      <!-- Static fallback image for mobile/slow connections -->
+      <img src="Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;" />
+    </video>
+    <noscript>
+      <img src="Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:0;" />
+    </noscript>
     <main id="home" class="container" style="position:relative;z-index:1;">
       <section class="hero" aria-label="hero">
         <div class="hero-intro">
@@ -943,19 +951,28 @@
       <div class="gallery-grid grid">
         <!-- Video Item 1 -->
         <div class="gallery-item video-item" data-video-src="Automated Curtains 2.mp4" data-video-title="Automated Curtains Runda">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains 2.mp4" type="video/mp4"></video>
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" preload="none" loading="lazy">
+            <source src="Automated Curtains 2.mp4" type="video/mp4">
+            <img src="Automated Curtains 2 Poster.jpg" alt="Automated Curtains Installations" style="width:100%;height:100%;object-fit:cover;border-radius:10px" />
+          </video>
           <div class="gallery-caption">Automated Curtains Installations</div>
         </div>
 
         <!-- Video Item 2 -->
         <div class="gallery-item video-item" data-video-src="Automated Curtains.mp4" data-video-title="Automated Curtains Kileleshwa">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains.mp4" type="video/mp4"></video>
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" preload="none" loading="lazy">
+            <source src="Automated Curtains.mp4" type="video/mp4">
+            <img src="Automated Curtains Poster.jpg" alt="Automated Curtains Demo" style="width:100%;height:100%;object-fit:cover;border-radius:10px" />
+          </video>
           <div class="gallery-caption">Automated Curtains Demo</div>
         </div>
 
         <!-- Video Item 3 -->
         <div class="gallery-item video-item" data-video-src="Control Panel.mp4" data-video-title="Curtains control Panel">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Control Panel.mp4" type="video/mp4"></video>
+          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" preload="none" loading="lazy">
+            <source src="Control Panel.mp4" type="video/mp4">
+            <img src="Control Panel Poster.jpg" alt="Curtains control Panel" style="width:100%;height:100%;object-fit:cover;border-radius:10px" />
+          </video>
           <div class="gallery-caption">Curtains control Panel</div>
         </div>
       </div>
@@ -1712,9 +1729,25 @@
   </script>
 
   <!-- Deferred libraries for advanced animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer crossorigin="anonymous"></script>
+  <!-- Only load heavy animation libraries on non-mobile, non-reduced-motion devices -->
+  <script>
+    (function(){
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+      var isSmallScreen = Math.min(window.innerWidth, window.innerHeight) < 768;
+      if(!reduce && !isTouch && !isSmallScreen){
+        var s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js';
+        s1.defer = true; s1.crossOrigin = 'anonymous'; document.body.appendChild(s1);
+        var s2 = document.createElement('script');
+        s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+        s2.defer = true; s2.crossOrigin = 'anonymous'; document.body.appendChild(s2);
+        var s3 = document.createElement('script');
+        s3.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
+        s3.defer = true; s3.crossOrigin = 'anonymous'; document.body.appendChild(s3);
+      }
+    })();
+  </script>
 
   <script>
     (function(){
