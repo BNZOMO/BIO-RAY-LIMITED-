@@ -287,77 +287,6 @@
     .gallery-item:hover .gallery-caption {
       transform: translateY(0);
     }
-    .video-item {
-      position: relative;
-      aspect-ratio: 1;
-    }
-    .video-item iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-    }
-    .video-item {
-      cursor: pointer;
-    }
-    .video-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-      border-radius: 10px;
-      transition: background 0.3s ease;
-      z-index: 10;
-    }
-    .video-item::after {
-      content: '▶';
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: rgba(255,255,255,0.9);
-      z-index: 11;
-      transition: transform 0.3s ease;
-    }
-    .video-item:hover::before {
-      background: rgba(0,0,0,0.5);
-    }
-    .video-item:hover::after {
-      transform: scale(1.1);
-    }
-    .video-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      z-index: 130;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 260ms ease;
-    }
-    .video-lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .video-lightbox-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-      z-index: 131;
-    }
     .video-lightbox video {
       width: 90%;
       max-width: 900px;
@@ -957,13 +886,13 @@
 
         <!-- Gallery Item 2 -->
         <a href="Fire Alarm system.jpg" class="gallery-item img-link">
-          <img src="Fire Alarm system.jpg" alt="Alarm System Components" loading="lazy" decoding="async">
+          <img src="Fire%20Alarm%20system.jpg" alt="Alarm System Components" loading="lazy" decoding="async">
           <div class="gallery-caption">Alarm System Components</div>
         </a>
 
         <!-- Gallery Item 3 -->
         <a href="Biometric locks.jpg" class="gallery-item img-link">
-          <img src="Biometric locks.jpg" alt="Biometric Access Control" loading="lazy" decoding="async">
+          <img src="Biometric%20locks.jpg" alt="Biometric Access Control" loading="lazy" decoding="async">
           <div class="gallery-caption">Biometric Access Control</div>
         </a>
 
@@ -975,61 +904,16 @@
 
         <!-- Gallery Item 5 -->
         <a href="fire maintenance.jpeg" class="gallery-item img-link">
-          <img src="fire maintenance.jpeg" alt="Fire System Maintenance" loading="lazy" decoding="async">
+          <img src="fire%20maintenance.jpeg" alt="Fire System Maintenance" loading="lazy" decoding="async">
           <div class="gallery-caption">Fire System Maintenance</div>
         </a>
 
         <!-- Gallery Item 6 -->
         <a href="Cyber sec.jpg" class="gallery-item img-link">
-          <img src="Cyber sec.jpg" alt="Cyber Security Consultation" loading="lazy" decoding="async">
+          <img src="Cyber%20sec.jpg" alt="Cyber Security Consultation" loading="lazy" decoding="async">
           <div class="gallery-caption">Cyber Security Consultation</div>
         </a>
       </div>
-
-      <!-- Videos Section -->
-<h3 style="margin-top:2rem">Videos</h3>
-<div class="gallery-grid grid">
-
-  <!-- Video Item 1 -->
-  <div class="gallery-item video-item" 
-       data-video-src="Extinguishers Supply.mp4" 
-       data-video-title="Extinguishers Supply">
-    <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" 
-           preload="none" 
-           controls 
-           poster="Video2 poster.png">
-      <source src="Extinguishers Supply.mp4" type="video/mp4">
-    </video>
-    <div class="gallery-caption">Extinguishers Supply</div>
-  </div>
-
-  <!-- Video Item 2 -->
-  <div class="gallery-item video-item" 
-       data-video-src="Automated Curtains 2.mp4" 
-       data-video-title="Automated Curtains Kileleshwa">
-    <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" 
-           preload="none" 
-           controls 
-           poster="Video1poster.png">
-      <source src="Automated Curtains 2.mp4" type="video/mp4">
-    </video>
-    <div class="gallery-caption">Automated Curtains Demo</div>
-  </div>
-
-  <!-- Video Item 3 -->
-  <div class="gallery-item video-item" 
-       data-video-src="Control Panel.mp4" 
-       data-video-title="Curtains Control Panel">
-    <video style="width:100%;height:100%;object-fit:cover;border-radius:10px" 
-           preload="none" 
-           controls 
-           poster="Video3poster.png">
-      <source src="Control Panel.mp4" type="video/mp4">
-    </video>
-    <div class="gallery-caption">Curtains Control Panel</div>
-  </div>
-
-</div>
 
     <!-- INDUSTRIES WE SERVE -->
     <section id="industries" aria-label="industries">
@@ -1138,7 +1022,7 @@
 
         <!-- Case Study 2 -->
         <article class="project" style="background:linear-gradient(135deg, #f5f5f5, #fff)">
-          <img src="Anthena School.jpeg" alt="Anthena School Fire Safety Case Study" loading="lazy" decoding="async" style="height:180px">
+          <img src="Anthena%20School.jpeg" alt="Anthena School Fire Safety Case Study" loading="lazy" decoding="async" style="height:180px">
           <div class="pbody">
             <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
               <strong style="color:var(--navy);font-size:1.05rem">Anthena School</strong>
@@ -1152,7 +1036,7 @@
 
         <!-- Case Study 3 -->
         <article class="project" style="background:linear-gradient(135deg, #f5f5f5, #fff)">
-          <img src="Solar water heater.jpeg" alt="Residential Solar Installation Case Study" loading="lazy" decoding="async" style="height:180px">
+          <img src="Solar%20water%20heater.jpeg" alt="Residential Solar Installation Case Study" loading="lazy" decoding="async" style="height:180px">
           <div class="pbody">
             <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
               <strong style="color:var(--navy);font-size:1.05rem">Westlands Residence</strong>
@@ -1214,9 +1098,6 @@
             </div>
           </div>
         </article>
-      </div>
-      <div style="text-align:center">
-        <a href="#" style="background:var(--navy);color:#fff;padding:0.9rem 1.4rem;border-radius:10px;font-weight:600;display:inline-block;transition:all 0.3s ease" onmouseover="this.style.background='var(--red)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--navy)';this.style.transform='translateY(0)'">View All Articles</a>
       </div>
     </section>
 
@@ -1488,7 +1369,7 @@
 
   <!-- Floating QR button for mobile (opens existing lightbox) -->
   <button id="qr-fab" class="qr-fab" aria-label="Show contact QR">
-    <img src="compressed/QR CODE.png" alt="BR Shield QR code" loading="lazy" decoding="async">
+    <img src="compressed/QR%20CODE.png" alt="BR Shield QR code" loading="lazy" decoding="async">
   </button>
 
   <script>
@@ -1586,45 +1467,6 @@
       document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
       lb.addEventListener('click', function(e){ if(e.target === this) closeLightbox(); });
       document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
-    })();
-
-    (function(){
-      var vlb = document.getElementById('video-lightbox');
-      var videoPlayer = document.getElementById('video-lightbox-player');
-      var videoSrc = document.getElementById('video-lightbox-src');
-
-      function openVideoLightbox(src, title){
-        videoSrc.src = src;
-        videoPlayer.load();
-        vlb.classList.add('open');
-        vlb.removeAttribute('aria-hidden');
-        document.body.style.overflow = 'hidden';
-        videoPlayer.play();
-      }
-
-      function closeVideoLightbox(){
-        vlb.classList.remove('open');
-        vlb.setAttribute('aria-hidden', 'true');
-        videoPlayer.pause();
-        videoSrc.src = '';
-        document.body.style.overflow = '';
-      }
-
-      document.querySelectorAll('.video-item').forEach(function(item){
-        item.addEventListener('click', function(){
-          var src = this.dataset.videoSrc;
-          var title = this.dataset.videoTitle;
-          openVideoLightbox(src, title);
-        });
-      });
-
-      document.getElementById('video-lightbox-close').addEventListener('click', closeVideoLightbox);
-      vlb.addEventListener('click', function(e){
-        if(e.target === this) closeVideoLightbox();
-      });
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape' && vlb.classList.contains('open')) closeVideoLightbox();
-      });
     })();
 
     // FAQ toggle functionality
