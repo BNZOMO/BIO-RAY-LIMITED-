@@ -128,6 +128,8 @@
       align-items:center;
       position:relative;
       background: none;
+      max-width:100%;
+      overflow-x:hidden;
       border-radius: 0;
       margin-bottom: 0;
       overflow:hidden;
@@ -136,19 +138,12 @@
       /* Removed overlay for maximum video clarity */
       pointer-events:none;
     }
-    .hero-video{
-      position:fixed;
-      top:0;left:0;width:100vw;height:100vh;
-      object-fit:cover;
-      z-index:-1;
-      min-width:100vw;
-      min-height:100vh;
-      max-width:100vw;
-      max-height:100vh;
-      margin:0;
-      padding:0;
-      border:none;
-      background:black;
+    /* Unused .hero-video styles removed - replaced with static background image */
+    #hero-bg{
+      display:none;
+    }
+    .hero{
+      position:relative;
     }
     .hero-intro, .hero-intro + aside{
       position:relative;
@@ -208,6 +203,7 @@
       box-shadow: 0 4px 12px rgba(10,42,77,0.07);
       border:1px solid rgba(10,42,77,0.04);
       max-width:340px;
+      width:100%;
     }
     .contact-line{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
     .contact-line svg{width:20px;height:20px;opacity:0.9}
@@ -468,6 +464,13 @@
     /* Footer */
     footer{padding:2rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem;border-top:2px solid rgba(10,42,77,0.12);background:#fafafa}
 
+    /* Tablet screens */
+    @media (max-width:1024px) and (min-width:769px){
+      .hero{grid-template-columns:1fr; text-align:center; padding: 2rem 1.5rem}
+      .card{max-width:100%; margin-top:1rem}
+      .services-grid, .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .container{padding:0 1.5rem}
+    }
     /* Small screens */
     @media (max-width:980px){
       .hero{grid-template-columns:1fr; text-align:center; padding: 2.5rem}
@@ -476,7 +479,7 @@
       nav ul{display:none}
       .menu-btn{display:block}
       #nav-toggle:checked + nav ul{display:flex;flex-direction:column;gap:0.6rem;padding:1rem}
-      .card{margin-top:1rem}
+      .card{margin-top:1rem; max-width:100%}
       .logo-mark{width:48px;height:48px}
     }
     /* Mobile-first adjustments and disabling heavy visuals on small screens */
@@ -487,11 +490,13 @@
       /* touch-friendly buttons */
       .btn-primary, .btn-secondary { min-height:44px; padding:12px 16px; font-size:16px; }
       .container { padding: 0.75rem; }
-      .hero { padding: 1.6rem 0; }
+      .hero { padding: 1.6rem 0.75rem; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .services-grid, .projects-grid { grid-template-columns: 1fr; }
       /* hide inline QR inside the hero card so we can show a floating QR on mobile */
       .qr-code { display: none !important; }
+      section { padding: 1.5rem 0.75rem; }
+      .card { max-width: 100%; }
     }
 
     /* Floating QR button (mobile) */
@@ -501,6 +506,13 @@
     @media (max-width:520px){
       .services-grid, .projects-grid{grid-template-columns:1fr}
       .hero-intro h2{font-size:1.6rem}
+      .container{padding:0 0.75rem}
+      .hero{padding:1.2rem 0.75rem}
+      h3{font-size:1.1rem}
+      section{padding:1.5rem 0.75rem}
+      .card{padding:0.75rem 0.85rem}
+      .hero-actions{gap:0.5rem}
+      .btn-primary, .btn-secondary{padding:0.75rem 1rem;font-size:0.9rem}
     }
     /* --- Added animation styles (performance-minded) --- */
     @media (prefers-reduced-motion: no-preference) {
@@ -592,11 +604,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#about">About</a>
-            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open About submenu">▾</button>
-            <ul class="dropdown" aria-label="About submenu">
-              <li><a href="#about">Company</a></li>
+            <a href="#about">Company</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Company submenu">▾</button>
+            <ul class="dropdown" aria-label="Company submenu">
+              <li><a href="#about">About Us</a></li>
               <li><a href="#about">Team & Mission</a></li>
+              <li><a href="#about">Why Choose Us</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -640,43 +653,40 @@
               <li><a href="#testimonials">Reviews</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#booking">Booking</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Booking submenu">▾</button>
+            <ul class="dropdown" aria-label="Booking submenu">
+              <li><a href="#booking">Schedule Demo</a></li>
+              <li><a href="#booking">Request Quote</a></li>
+              <li><a href="#booking">Service Appointment</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#contact">Contacts</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Contacts submenu">▾</button>
+            <ul class="dropdown" aria-label="Contacts submenu">
+              <li><a href="#contact">Phone: +254 724 533 636</a></li>
+              <li><a href="#contact">Email: brshieldsolutions@gmail.com</a></li>
+              <li><a href="#contact">Location: Nairobi, Kenya</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#recommendations">Recommendations</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Recommendations submenu">▾</button>
+            <ul class="dropdown" aria-label="Recommendations submenu">
+              <li><a href="#testimonials">Client Reviews</a></li>
+              <li><a href="#projects">Best Practices</a></li>
+              <li><a href="#blog">Blog & Resources</a></li>
+            </ul>
+          </li>
           <li><a href="#contact" class="ctasmall">Contact</a></li>
-          <li><a href="#contact" class="cta-quote">Request Demo</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO + CONTACT CARD with background video -->
-  <div style="position:relative;width:100%;overflow:hidden;">
-    <!-- Preload background video for faster start -->
-    <link rel="preload" as="video" href="Solar Background Video.mp4" type="video/mp4">
-    <!-- Responsive background: video for desktop, static image for mobile -->
-    <div id="hero-bg">
-      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;" loading="lazy">
-        <source src="Solar Background Video(2).mp4" type="video/mp4">
-        <img src="compressed/Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;" />
-      </video>
-      <img id="hero-static" src="compressed/Solar Background Poster.jpg" alt="Solar Background" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
-    </div>
-    <noscript>
-      <img src="compressed/Solar Background Poster.jpg" alt="Solar Background" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:0;" />
-    </noscript>
-    <script>
-      // Show static image for mobile, video for desktop
-      (function(){
-        var isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
-        var video = document.querySelector('.hero-video');
-        var img = document.getElementById('hero-static');
-        if(isMobile){
-          if(video) video.style.display = 'none';
-          if(img) img.style.display = 'block';
-        }else{
-          if(video) video.style.display = 'block';
-          if(img) img.style.display = 'none';
-        }
-      })();
-    </script>
+  <!-- HERO + CONTACT CARD with background image -->
     <!-- Optimization Instructions (not visible to users) -->
     <!--
     Compress all images using TinyPNG, Squoosh, or convert to WebP:
@@ -691,7 +701,7 @@
       - Use tools like PurgeCSS for automated removal.
     -->
     <main id="home" class="container" style="position:relative;z-index:1;">
-      <section class="hero" aria-label="hero">
+      <section class="hero" aria-label="hero" style="position:relative;background-image:url('Bacground%20Image.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;">
         <div class="hero-intro">
         <h2>Guarding Lives, Securing Property</h2>
         <p class="tagline">Bio Ray Solutions provides end-to-end security systems, fire extinguishers supply & servicing, Fire alarms, surveillance installations, access control, electric fencing and maintenance services across Nairobi and beyond.</p>
@@ -827,7 +837,7 @@
 
         <div class="service">
           <a class="img-link" href="solar panels.jpg" target="_blank" rel="noopener">
-            <img class="service-img" src="solar panels.jpg" alt="Solar energy" width="56" height="56" loading="lazy" decoding="async">
+            <img class="service-img" src="solar%20panels.jpg" alt="Solar energy" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
             <h4>Solar Energy Solutions</h4>
@@ -867,7 +877,7 @@
 
         <div class="service">
           <a class="img-link" href="smart homes.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="smart homes.jpeg" alt="Consultation and design" width="56" height="56" loading="lazy" decoding="async">
+            <img class="service-img" src="smart%20homes.jpeg" alt="Consultation and design" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
             <h4>Smart Homes Automation</h4>
@@ -909,7 +919,7 @@
 
         <!-- Project 4 -->
         <article class="project">
-          <img src="Solar Heaters.jpeg" alt="Biometric access control — Westlands" loading="lazy" decoding="async">
+          <img src="Solar%20Heaters.jpeg" alt="Biometric access control — Westlands" loading="lazy" decoding="async">
           <div class="pbody">
             <strong>Solar Water heaters installations — Westlands</strong>
             <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Commercial • Location: Westlands, Nairobi • Description: Installation of a 300 Litre Pressurized solar heater for a 5 Bedroom Mansion. Completed: Feb 2025</p>
@@ -918,7 +928,7 @@
 
         <!-- Project 5 -->
         <article class="project">
-          <img src="Solar shed.jpg" alt="Solar Car Shade — Kitengela" loading="lazy" decoding="async">
+          <img src="Solar%20shed.jpg" alt="Solar Car Shade — Kitengela" loading="lazy" decoding="async">
           <div class="pbody">
             <strong>Solar Car Shade — Kitengela</strong>
             <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Residential • Location: Kitengela, Kajiado • Description: Design and installation of secure solar car shades for safe housing and optimal performance. Completed: Apr 2025</p>
@@ -942,7 +952,7 @@
       <div class="gallery-grid grid">
         <!-- Gallery Item 1 -->
         <a href="Cctv installation service.jpg" class="gallery-item img-link">
-          <img src="Cctv installation service.jpg" alt="CCTV Camera System" loading="lazy" decoding="async">
+          <img src="Cctv%20installation%20service.jpg" alt="CCTV Camera System" loading="lazy" decoding="async">
           <div class="gallery-caption">CCTV Camera System</div>
         </a>
 
