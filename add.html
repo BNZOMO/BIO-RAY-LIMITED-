@@ -293,13 +293,6 @@
     .gallery-item:hover .gallery-caption {
       transform: translateY(0);
     }
-    .video-lightbox video {
-      width: 90%;
-      max-width: 900px;
-      height: 60vh;
-      border-radius: 10px;
-      border: none;
-    }
     @media (max-width:520px){
       .gallery-grid{
         grid-template-columns: repeat(2, 1fr);
@@ -635,7 +628,7 @@
       - Use tools like PurgeCSS for automated removal.
     -->
     <main id="home" class="container" style="position:relative;z-index:1;">
-      <section class="hero" aria-label="hero" style="position:relative;background-image:url('Bacground%20Image.jpg');background-image:url('bacground%20image.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;background-color:#f0f0f0;">
+      <section class="hero" aria-label="hero" style="position:relative;background-image:url('Bacground Image.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;background-color:#f0f0f0;">
         <div class="hero-intro">
         <h2>Guarding Lives, Securing Property</h2>
         <p class="tagline">Bio Ray Solutions provides end-to-end security systems, fire extinguishers supply & servicing, Fire alarms, surveillance installations, access control, electric fencing and maintenance services across Nairobi and beyond.</p>
@@ -1362,15 +1355,6 @@
   <div id="lightbox" class="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Image viewer">
     <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
     <img id="lightbox-img" src="" alt="" />
-  </div>
-
-  <!-- Video Lightbox modal -->
-  <div id="video-lightbox" class="video-lightbox" aria-hidden="true" role="dialog" aria-label="Video viewer">
-    <button id="video-lightbox-close" class="video-lightbox-close" aria-label="Close">&times;</button>
-    <video id="video-lightbox-player" controls>
-      <source id="video-lightbox-src" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
   </div>
 
   <!-- Floating QR button for mobile (opens existing lightbox) -->
