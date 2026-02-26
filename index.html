@@ -427,13 +427,35 @@
       .projects-grid{
         grid-template-columns:repeat(2,1fr);
       }
-      nav ul{display:none}
+      /* mobile nav: hide links, show hamburger, slide-down menu */
+      header nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:linear-gradient(180deg, rgba(10,42,77,0.98), rgba(10,42,77,0.96));
+        border-bottom:1px solid rgba(255,255,255,0.06);
+      }
+      nav ul{
+        flex-direction:column;
+        gap:0;
+        padding:0;
+        margin:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 260ms ease;
+      }
+      nav li{
+        border-top:1px solid rgba(255,255,255,0.06);
+      }
+      nav li a{
+        display:block;
+        padding:0.75rem 1.75rem;
+      }
       .menu-btn{display:block}
       #nav-toggle:checked + nav ul{
-        display:flex;
-        flex-direction:column;
-        gap:0.6rem;
-        padding:1rem;
+        max-height:520px;
+        padding-bottom:0.4rem;
       }
       .card{margin-top:1.25rem; max-width:100%}
       .logo-mark{width:48px;height:48px}
@@ -1464,6 +1486,16 @@
       // Close on outside click, scroll, or resize
       document.addEventListener('click', function(e){ if(!e.target.closest('nav')) closeAll(); });
       window.addEventListener('resize', closeAll); window.addEventListener('scroll', closeAll, true);
+
+      // Close mobile nav when a link is tapped (for small screens)
+      var navToggle = document.getElementById('nav-toggle');
+      document.querySelectorAll('nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 980 && navToggle){
+            navToggle.checked = false;
+          }
+        });
+      });
     })();
 
     (function(){
