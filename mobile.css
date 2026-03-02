@@ -1,0 +1,346 @@
+:root {
+  --navy: #0A2A4D;
+  --red: #C62828;
+  --orange: #F57C00;
+  --light: #F5F5F5;
+  --charcoal: #212121;
+  --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--charcoal);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  /* Respect safe areas on iOS notch devices */
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.m-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(90deg, var(--navy), #092a48);
+  color: #fff;
+  padding-top: env(safe-area-inset-top);
+}
+
+.m-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+}
+
+.m-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.m-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.m-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-brand-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.m-brand-tag {
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.m-header-call {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.m-main {
+  padding-top: calc(56px + env(safe-area-inset-top));
+}
+
+.m-hero {
+  position: relative;
+  min-height: calc(100vh - 56px - env(safe-area-inset-top));
+  display: flex;
+  align-items: flex-end;
+  padding: 1.6rem 1.2rem 1.8rem 1.2rem;
+  background-image: url('../BackgroundB.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.m-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35));
+}
+
+.m-hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 520px;
+}
+
+.m-eyebrow {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.m-hero-title {
+  margin: 0.2rem 0 0.5rem 0;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #fdf5d0;
+}
+
+.m-hero-sub {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.m-hero-benefit {
+  margin: 0 0 0.9rem 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.m-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.m-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.m-btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.m-btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.m-btn-full {
+  width: 100%;
+}
+
+.m-hero-inline {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.m-section {
+  padding: 1.8rem 1.2rem;
+}
+
+.m-section:nth-of-type(odd) {
+  background: #ffffff;
+}
+
+.m-section:nth-of-type(even) {
+  background: #f7f7fb;
+}
+
+.m-section-title {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+.m-section-intro {
+  margin: 0 0 1.1rem 0;
+  font-size: 0.9rem;
+  color: rgba(33, 33, 33, 0.86);
+}
+
+.m-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.m-service {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0.9rem 0.9rem 0.85rem 0.9rem;
+  box-shadow: 0 3px 10px rgba(10, 42, 77, 0.06);
+  border: 1px solid rgba(10, 42, 77, 0.06);
+}
+
+.m-service-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+.m-service-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: rgba(33, 33, 33, 0.86);
+}
+
+.m-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.m-stat {
+  flex: 1 1 90px;
+  min-width: 90px;
+  background: linear-gradient(135deg, var(--navy), rgba(10, 42, 77, 0.85));
+  border-radius: 10px;
+  padding: 0.7rem 0.6rem;
+  color: #fff;
+  text-align: center;
+}
+
+.m-stat-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.m-stat-label {
+  font-size: 0.75rem;
+  opacity: 0.95;
+}
+
+.m-trust-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  color: rgba(33, 33, 33, 0.86);
+}
+
+.m-trust-list li + li {
+  margin-top: 0.3rem;
+}
+
+.m-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.m-form input,
+.m-form select,
+.m-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.14);
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fafafa;
+}
+
+.m-form input:focus,
+.m-form select:focus,
+.m-form textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(10, 42, 77, 0.12);
+}
+
+.m-form textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.m-form button {
+  border: none;
+}
+
+.m-contact-short {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.m-contact-short a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.m-footer {
+  padding: 1.2rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(33, 33, 33, 0.7);
+  background: #fafafa;
+  border-top: 1px solid rgba(10, 42, 77, 0.08);
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(10, 42, 77, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
