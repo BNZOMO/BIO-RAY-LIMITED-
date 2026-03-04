@@ -1,13 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta http-equiv="refresh" content="0; url=add.html" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>If you are not redirected automatically, <a href="add.html">click here</a>.</p>
-  </body>
-</html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#0a2a4d">
+  <title>Security &amp; Solar Solutions Nairobi | Bio Ray</title>
+  <meta name="description" content="Bio Ray Solutions installs CCTV, electric fences, fire alarms, access control and solar systems for homes and businesses in Nairobi, Kenya. Request a free quote." />
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="/add.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bio Ray Solutions — Smart Protection" />
+  <meta property="og:description" content="Bio Ray Solutions — security systems, surveillance, access control, electric fencing, and maintenance. Nairobi, Kenya." />
+  <meta property="og:site_name" content="Bio Ray Solutions" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bio Ray Solutions — Smart Protection" />
+  <meta name="twitter:description" content="End-to-end security, fire and solar solutions in Nairobi. Request a demo or quote today." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bio Ray Solutions",
+    "telephone": "+254724533636",
+    "logo": "/logo2.png",
+    "sameAs": ["https://facebook.com/brshieldsolutions","https://instagram.com/brshieldsolutions","https://linkedin.com/company/brshieldsolutions"]
+  }
+  </script>
+
+  <!-- Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preload" as="image" href="logo2.png">
+  
+  <!-- Styles (single-file for easy editing) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy: #0A2A4D;      /* Primary */
+      --red:  #C62828;      /* Secondary */
+      --orange: #F57C00;    /* Accent */
+      --light: #F5F5F5;     /* Neutral background */
+      --charcoal: #212121;  /* Text */
+      --white: #ffffff;
       --max-width: 1100px;
       --radius: 12px;
       --gap: 1.25rem;
@@ -28,28 +64,55 @@
     }
     a{color:inherit;text-decoration:none}
 
-    .container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 1.5rem;
+    }
 
     /* Header / Nav */
-    header{background:var(--white);border-bottom:1px solid rgba(10,42,77,0.06);position:sticky;top:0;z-index:9999}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.85rem 1rem;}
+    header{background:linear-gradient(90deg,var(--navy), #092a48);border-bottom:1px solid rgba(255,255,255,0.06);position:fixed;top:0;left:0;right:0;z-index:9999;color:#fff;box-shadow:0 8px 28px rgba(9,26,45,0.12)}
+    /* prevent page content being hidden under fixed header */
+    /* Remove body padding-top to allow background video to reach header */
+    /* body{padding-top:72px} */
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1rem;max-width:var(--max-width);margin:0 auto;padding-left:136px}
+    header .brand h1, header .brand div{color:rgba(255,255,255,0.95)}
+    /* position brand at the far left of header */
+    header .brand{position:absolute;left:8px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:0.75rem}
+    header nav ul a{color:rgba(255,255,255,0.95);font-weight:600}
+    header nav ul li .dropdown{background:#fff}
+    header nav ul li .dropdown a{color:var(--navy)}
+    header .logo-mark{background:linear-gradient(135deg,#fff,rgba(255,255,255,0.92));color:var(--navy)}
+    header .brand a.brand-home{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
+    header .ctasmall{border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.95)}
+    header .cta-quote{box-shadow:none}
     .brand{display:flex;align-items:center;gap:0.75rem}
     .logo-mark{
-      width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--red));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;
+      width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--red));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;
       box-shadow: 0 6px 18px rgba(10n,42,77,0.12);
       font-size:14px;
     }
     .brand h1{margin:0;font-size:1.05rem;line-height:1}
-    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
+    nav ul{
+      display:flex;
+      gap:1rem;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+      margin-left:2.5rem;
+    }
     /* Dropdown menus for nav items */
     nav ul li{position:relative}
     nav ul li .dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:200px;background:var(--white);border-radius:8px;box-shadow:0 12px 36px rgba(10,42,77,0.10);padding:6px 0;border:1px solid rgba(10,42,77,0.06);display:none;opacity:0;transform:translateY(6px);transition:opacity 180ms ease,transform 180ms ease;z-index:10001;pointer-events:auto}
     nav ul li:hover > .dropdown, nav ul li:focus-within > .dropdown{display:block;opacity:1;transform:translateY(0)}
-    nav ul li .dropdown a{Display:block;padding:0.55rem 1rem;color:var(--navy);font-weight:600}
+    nav ul li .dropdown a{display:block;padding:0.55rem 1rem;color:var(--navy);font-weight:600}
     nav ul li .dropdown a:hover{background:rgba(10,42,77,0.04)}
 
     /* Mobile / touch behaviour: show dropdowns on tap (JS toggles .open) */
     nav ul li .dropdown.open{display:block;opacity:1;transform:none}
+    /* Tablet / mobile dropdown layout */
     @media (max-width:980px){
       nav ul{flex-direction:column;gap:0.6rem;padding:1rem}
       nav ul li .dropdown{position:static;box-shadow:none;border:0;padding:0;margin-left:0;transform:none}
@@ -67,20 +130,71 @@
 
     /* Hero */
     .hero{
-      padding:3.2rem 0;
+      padding-top:calc(72px + 1.5rem);
+      padding-bottom:2rem;
+      padding-left:2rem;
+      padding-right:2rem;
       display:grid;
       grid-template-columns:1fr 420px;
-      gap:2rem;
+      gap:3rem;
       align-items:center;
-      position:relative; /* for canvas and overlays */
+      position:relative;
+      background: none;
+      max-width:100%;
+      overflow-x:hidden;
+      border-radius: 0;
+      margin-bottom: 0;
+      overflow:hidden;
+      min-height:100vh; /* ensure background image fills full viewport */
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: transparent;
+      pointer-events:none;
+      z-index:0;
+    }
+    /* Unused .hero-video styles removed - replaced with static background image */
+    #hero-bg{
+      display:none;
+    }
+    .hero{
+      position:relative;
+    }
+    .hero-intro,
+    .hero-intro + aside{
+      position:relative;
+      z-index:1;
     }
     .hero-intro h2{margin:0;font-size:2.4rem;color:#eef4f8;font-weight:800;line-height:1.05;font-family:'Poppins',system-ui,-apple-system,"Segoe UI",Roboto,Arial}
-    .hero-intro h2{ text-shadow: 0 6px 20px rgba(0,0,0,0.65); }
-    .tagline{font-size:1.1rem;color:rgba(238,244,248,0.96);margin:0.8rem 0 1.2rem;font-weight:600;font-family:'Poppins',system-ui,-apple-system,"Segoe UI",Roboto,Arial;text-shadow:0 4px 14px rgba(0,0,0,0.55)}
-    .hero-intro p{margin:0 0 1.5rem;color:rgba(238,244,248,0.94);font-size:1rem;line-height:1.6;font-family:Inter,system-ui,Arial;text-shadow:0 3px 12px rgba(0,0,0,0.45)}
+    .hero-intro h2{
+      text-shadow: 0 6px 20px rgba(0,0,0,0.65);
+      letter-spacing: 1px;
+      color: #DAA520;
+      margin-bottom: 1.3rem;
+    }
+    .tagline{
+      font-size:1.2rem;
+      color:#ffffff;
+      margin:0.8rem 0 1.2rem;
+      font-weight:600;
+      font-family:'Poppins',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      text-shadow:0 4px 14px rgba(0,0,0,0.55);
+      letter-spacing:0.2px;
+    }
+    .hero-intro p{
+      margin:0 0 1.5rem;
+      color:#f5f7fb;
+      font-size:1.05rem;
+      line-height:1.7;
+      font-family:'Inter',system-ui,Arial;
+      text-shadow:0 3px 12px rgba(0,0,0,0.45);
+      letter-spacing:0.1px;
+    }
     .hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
-    .btn-primary{background:var(--navy);color:var(--white);padding:0.75rem 1.05rem;border-radius:10px;font-weight:600}
-    .btn-secondary{background:transparent;border:2px solid var(--navy);padding:0.6rem 0.95rem;border-radius:10px;font-weight:600;color:var(--navy)}
+    .btn-primary{background:var(--navy);color:var(--white);padding:0.9rem 1.4rem;border-radius:10px;font-weight:600;font-size:1rem;display:inline-block}
+    .btn-secondary{background:transparent;border:2px solid var(--navy);padding:0.85rem 1.35rem;border-radius:10px;font-weight:600;color:var(--navy);font-size:1rem;display:inline-block}
     .btn-primary, .btn-secondary {
       transition: all 0.3s ease;
       cursor: pointer;
@@ -98,15 +212,21 @@
 
     /* Quick info card on right */
     .card{
-      background:linear-gradient(180deg, #ffffff, #fbfbfb);
-      border-radius:12px;padding:1.25rem;box-shadow: 0 6px 30px rgba(10,42,77,0.06);
+      background:#fff;
+      border-radius:12px;
+      padding:1rem 1.1rem;
+      box-shadow: 0 4px 12px rgba(10,42,77,0.07);
+      border:1px solid rgba(10,42,77,0.04);
+      max-width:340px;
+      width:100%;
     }
     .contact-line{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
     .contact-line svg{width:20px;height:20px;opacity:0.9}
 
     /* Sections */
-    section{padding:2rem 0;border-top:1px solid rgba(10,42,77,0.03)}
-    h3{color:var(--navy);margin:0 0 1rem;font-size:1.15rem}
+    section{padding:2.5rem 2rem;border-top:2px solid rgba(10,42,77,0.08);background:linear-gradient(180deg, transparent, rgba(10,42,77,0.01));width:100%}
+    section:nth-child(even){background:linear-gradient(180deg, rgba(10,42,77,0.02), transparent)}
+    h3{color:var(--navy);margin:0 0 1.5rem;font-size:1.3rem;font-weight:700}
     .grid{display:grid;gap:var(--gap)}
 
     /* About */
@@ -116,10 +236,13 @@
     /* Services */
     .services-grid{grid-template-columns:repeat(3,1fr)}
     .service{
-      background:var(--white);padding:1rem;border-radius:10px;display:flex;gap:0.85rem;align-items:flex-start;box-shadow:0 6px 18px rgba(10,42,77,0.04)
+      background:var(--white);padding:1.5rem;border-radius:12px;display:flex;gap:1.25rem;align-items:flex-start;box-shadow:0 4px 16px rgba(10,42,77,0.06);transition:all 0.3s cubic-bezier(0.2,0.9,0.2,1);border:1px solid rgba(10,42,77,0.04)
     }
-    .service svg{width:44px;height:44px;flex-shrink:0;border-radius:8px;padding:8px;background:linear-gradient(180deg,var(--light),#fff)}
-      .service h4{margin:0;font-size:1rem}
+    .service:hover{
+      transform:translateY(-8px);box-shadow:0 12px 32px rgba(10,42,77,0.1);border-color:rgba(10,42,77,0.08)
+    }
+    .service svg{width:56px;height:56px;flex-shrink:0;border-radius:10px;padding:12px;background:linear-gradient(135deg,var(--orange),rgba(245,124,0,0.8))}
+      .service h4{margin:0;font-size:1.05rem;font-weight:700;color:var(--navy)}
     /* Responsive thumbnail for services */
     .service-img{width:56px;height:56px;border-radius:8px;object-fit:cover;flex-shrink:0;display:block}
 
@@ -133,9 +256,11 @@
 
     /* Projects */
     .projects-grid{grid-template-columns:repeat(3,1fr)}
-    .project{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(10,42,77,0.06)}
-    .project img{width:100%;height:160px;object-fit:cover;display:block}
-    .project .pbody{padding:0.9rem}
+    .project{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(10,42,77,0.06);transition:all 0.3s cubic-bezier(0.2,0.9,0.2,1);border:1px solid rgba(10,42,77,0.04)}
+    .project:hover{transform:translateY(-10px);box-shadow:0 16px 40px rgba(10,42,77,0.12)}
+    .project img{width:100%;height:200px;object-fit:cover;display:block;transition:transform 0.4s cubic-bezier(0.2,0.9,0.2,1)}
+    .project:hover img{transform:scale(1.06)}
+    .project .pbody{padding:1.25rem;background:linear-gradient(180deg, #ffffff, #fbfbfb)}
 
     /* Gallery */
     .gallery-grid {
@@ -176,84 +301,6 @@
     }
     .gallery-item:hover .gallery-caption {
       transform: translateY(0);
-    }
-    .video-item {
-      position: relative;
-      aspect-ratio: 1;
-    }
-    .video-item iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-    }
-    .video-item {
-      cursor: pointer;
-    }
-    .video-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-      border-radius: 10px;
-      transition: background 0.3s ease;
-      z-index: 10;
-    }
-    .video-item::after {
-      content: '▶';
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: rgba(255,255,255,0.9);
-      z-index: 11;
-      transition: transform 0.3s ease;
-    }
-    .video-item:hover::before {
-      background: rgba(0,0,0,0.5);
-    }
-    .video-item:hover::after {
-      transform: scale(1.1);
-    }
-    .video-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.95);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      z-index: 130;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 260ms ease;
-    }
-    .video-lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .video-lightbox-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-      z-index: 131;
-    }
-    .video-lightbox video {
-      width: 90%;
-      max-width: 900px;
-      height: 60vh;
-      border-radius: 10px;
-      border: none;
     }
     @media (max-width:520px){
       .gallery-grid{
@@ -345,23 +392,82 @@
 
     /* Contact */
     .contact-grid{grid-template-columns:1fr 420px}
-    form{display:grid;gap:0.65rem}
-    input,textarea{padding:0.8rem;border-radius:8px;border:1px solid rgba(33,33,33,0.08);font-size:0.95rem}
-    button[type="submit"]{background:var(--orange);color:var(--white);padding:0.85rem;border-radius:10px;border:0;font-weight:600}
+    form{display:grid;gap:0.9rem}
+    input,textarea{padding:1rem;border-radius:10px;border:1px solid rgba(33,33,33,0.12);font-size:0.95rem;transition:all 0.2s ease;background:#fafafa}
+    input:focus,textarea:focus{outline:none;border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(10,42,77,0.08)}
+    button[type="submit"]{background:var(--orange);color:var(--white);padding:1rem;border-radius:10px;border:0;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s ease}
+    button[type="submit"]:hover{background:var(--red);transform:translateY(-2px);box-shadow:0 8px 20px rgba(198,40,40,0.2)}
 
     /* Footer */
-    footer{padding:1.25rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem}
+    footer{padding:2rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem;border-top:2px solid rgba(10,42,77,0.12);background:#fafafa}
 
-    /* Small screens */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .about-grid, .contact-grid{grid-template-columns:1fr}
+    /* Tablet screens */
+    @media (max-width:1024px) and (min-width:769px){
+      .hero{grid-template-columns:1fr; text-align:center; padding:2rem 1.5rem}
+      .card{max-width:100%; margin-top:1.5rem}
       .services-grid, .projects-grid{grid-template-columns:repeat(2,1fr)}
-      nav ul{display:none}
-      .menu-btn{display:block}
-      #nav-toggle:checked + nav ul{display:flex;flex-direction:column;gap:0.6rem;padding:1rem}
-      .card{margin-top:1rem}
+      .container{padding:0 1.5rem}
+    }
+    /* Mobile navigation (hamburger) and small screens */
+    @media (max-width:980px){
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:2.5rem 1.5rem;
+      }
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .services-grid,
+      .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      /* mobile nav: hide links, show hamburger, slide-down menu */
+      header nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:linear-gradient(180deg, rgba(10,42,77,0.98), rgba(10,42,77,0.96));
+        border-bottom:1px solid rgba(255,255,255,0.06);
+      }
+      nav ul{
+        flex-direction:column;
+        gap:0;
+        padding:0;
+        margin:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 260ms ease; /* smooth slide-down */
+        text-align:center;
+      }
+      nav li{
+        border-top:1px solid rgba(255,255,255,0.06);
+      }
+      nav li a{
+        display:block;
+        padding:0.9rem 1.5rem;
+      }
+      .menu-btn{display:block} /* show hamburger icon */
+      #nav-toggle:checked + nav ul{
+        max-height:520px;
+        padding-bottom:0.4rem;
+      }
+      .card{margin-top:1.25rem; max-width:100%}
       .logo-mark{width:48px;height:48px}
+      /* stack 3-col content grids on tablets/phones */
+      #resources > div[style*="grid-template-columns"]{
+        display:grid;
+        grid-template-columns:repeat(2,1fr) !important;
+      }
+      #events > div[style*="grid-template-columns"]{
+        display:grid;
+        grid-template-columns:repeat(2,1fr) !important;
+      }
+      #contact-advanced > div[style*="grid-template-columns"]{
+        grid-template-columns:1fr !important;
+      }
     }
     /* Mobile-first adjustments and disabling heavy visuals on small screens */
     @media (max-width:768px){
@@ -370,21 +476,55 @@
       .parallax-img img { transform: none !important; }
       /* touch-friendly buttons */
       .btn-primary, .btn-secondary { min-height:44px; padding:12px 16px; font-size:16px; }
-      .container { padding: 0.75rem; }
-      .hero { padding: 1.6rem 0; }
+      .container { padding:0.75rem; }
+      .hero {
+        padding:1.8rem 0.75rem;
+        gap:1.75rem;
+      }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid, .projects-grid { grid-template-columns: 1fr; }
+      .services-grid,
+      .projects-grid { grid-template-columns:1fr; }
       /* hide inline QR inside the hero card so we can show a floating QR on mobile */
       .qr-code { display: none !important; }
+      section { padding:1.5rem 0.75rem; }
+      .card { max-width:100%; }
+      /* stack blog/resources and events into a single column on phones */
+      #resources > div[style*="grid-template-columns"],
+      #events > div[style*="grid-template-columns"]{
+        grid-template-columns:1fr !important;
+      }
     }
 
     /* Floating QR button (mobile) */
-    .qr-fab{display:none;position:fixed;right:16px;bottom:16px;width:64px;height:64px;border-radius:12px;background:var(--white);box-shadow:0 10px 30px rgba(10,42,77,0.12);z-index:140;align-items:center;justify-content:center;padding:6px;border:1px solid rgba(10,42,77,0.06)}
+    .qr-fab{
+      display:none;
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:var(--white);
+      box-shadow:0 10px 30px rgba(10,42,77,0.12);
+      z-index:140;
+      align-items:center;
+      justify-content:center;
+      padding:6px;
+      border:1px solid rgba(10,42,77,0.06)
+    }
     .qr-fab img{width:100%;height:100%;object-fit:contain;border-radius:8px}
     @media (max-width:768px){ .qr-fab{display:flex} }
     @media (max-width:520px){
-      .services-grid, .projects-grid{grid-template-columns:1fr}
+      .services-grid,
+      .projects-grid{grid-template-columns:1fr}
       .hero-intro h2{font-size:1.6rem}
+      .container{padding:0 0.75rem}
+      .hero{padding:1.4rem 0.75rem}
+      h3{font-size:1.1rem}
+      section{padding:1.5rem 0.75rem}
+      .card{padding:0.75rem 0.85rem}
+      .hero-actions{gap:0.5rem; justify-content:center;}
+      .btn-primary, .btn-secondary{padding:0.75rem 1rem;font-size:0.9rem}
     }
     /* --- Added animation styles (performance-minded) --- */
     @media (prefers-reduced-motion: no-preference) {
@@ -419,7 +559,7 @@
       .service { transition: transform 340ms cubic-bezier(.2,.9,.2,1), box-shadow 340ms ease; will-change: transform, box-shadow; }
       .service:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(10,42,77,0.08); }
       .service .service-img, .service svg { transition: transform 520ms cubic-bezier(.2,.9,.2,1); will-change: transform; }
-      .service:hover .service-img, .service:hover svg { transform: translateY(-4px) scale(1.02); }
+      .service:hover .service-img, .service:hover svg { transform: translateY(-6px) scale(1.06); }
 
       /* Projects: card lift, image zoom, caption reveal */
       .projects-grid .project { transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease; will-change: transform, box-shadow; }
@@ -449,17 +589,19 @@
     <div class="container nav-wrap">
       <div class="brand">
         <div class="logo-mark">
-          <img src="logo2.png" alt="BR Shield Solutions logo" width="52" height="52" loading="lazy" decoding="async" style="width:52px;height:52px;border-radius:8px;object-fit:contain;display:block;" />
+          <a href="#home" class="brand-home" aria-label="Home">
+            <img src="logo2.png" alt="Bio Ray Solutions logo" width="64" height="64" loading="lazy" decoding="async" style="width:64px;height:64px;border-radius:10px;object-fit:contain;display:block;" />
+          </a>
         </div>
         <div>
-          <h1 style="font-size:1rem;margin-bottom:0">BR Shield Solutions</h1>
-          <div style="font-size:0.82rem;color:rgba(33,33,33,0.6)">Guarding Lives, Securing Property</div>
+          <h1 style="font-size:1.1rem;margin-bottom:0">Bio Ray Solutions</h1>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.9)">Guarding Lives, Securing Property</div>
         </div>
       </div>
 
       <!-- Mobile toggle (CSS only) -->
       <label for="nav-toggle" class="menu-btn" style="cursor:pointer;padding:0.5rem;background:transparent;border-radius:8px">
-        <svg width="22" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 6h18M3 12h18M3 18h18" stroke="#0A2A4D" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg width="22" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 6h18M3 12h18M3 18h18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/></svg>
       </label>
       <input id="nav-toggle" type="checkbox" />
 
@@ -474,11 +616,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#about">About</a>
-            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open About submenu">▾</button>
-            <ul class="dropdown" aria-label="About submenu">
-              <li><a href="#about">Company</a></li>
+            <a href="#about">Company</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Company submenu">▾</button>
+            <ul class="dropdown" aria-label="Company submenu">
+              <li><a href="#about">About Us</a></li>
               <li><a href="#about">Team & Mission</a></li>
+              <li><a href="#about">Why Choose Us</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -497,9 +640,6 @@
               <li><a href="#industries">Residential</a></li>
               <li><a href="#industries">Commercial</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="blog/index.html">Blog</a>
           </li>
           <li class="nav-item">
             <a href="#projects">Projects</a>
@@ -525,24 +665,63 @@
               <li><a href="#testimonials">Reviews</a></li>
             </ul>
           </li>
-          <li><a href="#contact" class="ctasmall">Contact</a></li>
-          <li><a href="#contact" class="cta-quote">Request Demo</a></li>
+          <li class="nav-item">
+            <a href="#booking">Booking</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Booking submenu">▾</button>
+            <ul class="dropdown" aria-label="Booking submenu">
+              <li><a href="#booking">Schedule Demo</a></li>
+              <li><a href="#booking">Request Quote</a></li>
+              <li><a href="#booking">Service Appointment</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#contact">Contacts</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Contacts submenu">▾</button>
+            <ul class="dropdown" aria-label="Contacts submenu">
+              <li><a href="#contact">Phone: +254 724 533 636</a></li>
+              <li><a href="#contact">Email: brshieldsolutions@gmail.com</a></li>
+              <li><a href="#contact">Location: Nairobi, Kenya</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#recommendations">Recommendations</a>
+            <button class="dropdown-toggle" aria-expanded="false" aria-label="Open Recommendations submenu">▾</button>
+            <ul class="dropdown" aria-label="Recommendations submenu">
+              <li><a href="#testimonials">Client Reviews</a></li>
+              <li><a href="#projects">Best Practices</a></li>
+              <li><a href="#blog">Blog & Resources</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="home" class="container">
-    <section class="hero" aria-label="hero">
+  <!-- HERO + CONTACT CARD with background image -->
+    <!-- Optimization Instructions (not visible to users) -->
+    <!--
+    Compress all images using TinyPNG, Squoosh, or convert to WebP:
+      - logo2.png, qr-vcard.png, director-1.jpg, cctv-2.jpeg, solar panels.jpg, alarm-system-2.jpeg, electric-fence-2.jpeg, fire-maintenance.jpg, smart homes.jpeg, packgroup.jpg, automatic.jpg, Solar Heaters.jpeg, Solar shed.jpg, fire-maintenance.jpg, biometric.jpeg, consultations.jpg, Parkgroup.jpeg, Anthena School.jpeg, Solar water heater.jpeg, qr-site.png, QR CODE.png
+
+    Compress all videos using HandBrake or similar:
+      - Solar Background video.mp4, Automated Curtains 2.mp4, Automated Curtains.mp4, Control Panel.mp4
+
+    Remove unused CSS/JS:
+      - Delete or comment out any styles/scripts not referenced in the HTML.
+      - Minimize inline CSS and scripts.
+      - Use tools like PurgeCSS for automated removal.
+    -->
+    <main id="home" style="position:relative;z-index:1;">
+      <section class="hero" aria-label="hero" style="position:relative;width:100vw;margin-left:calc(-50vw + 50%);background-image:url('../Bacground Image.jpg');background-position:center top;background-size:cover;background-repeat:no-repeat;background-color:#f0f0f0;">
       <div class="hero-intro">
-        <h2>Guarding Lives, Securing Property</h2>
-        <p class="tagline">BR Shield Solutions provides end-to-end security systems, fire extinguishers supply & servicing, Fire alarms, surveillance installations, access control, electric fencing and maintenance services across Nairobi and beyond.</p>
-        <p>We design and install intelligent protection solutions for homes, businesses and institutions — combining reliability, rapid response and professional maintenance.</p>
+        <h2>Reliable Security &amp; Solar Solutions in Kenya</h2>
+        <p class="tagline">Bio Ray Solutions designs and installs CCTV, electric fences, fire alarms, access control and solar systems for homes and businesses across Nairobi, Kenya.</p>
+        <p>Protect your property, cut energy costs and get fast, professional support from a trusted local team.</p>
 
         <div class="hero-actions" style="margin-top:1rem">
-          <a href="#contact" class="btn-primary">Request Demo</a>
-          <a href="#projects" class="btn-secondary">View Projects</a>
+          <a href="#contact" class="btn-primary">Get a Free Site Visit</a>
+          <a href="tel:+254724533636" class="btn-secondary">Call Now: +254 724 533 636</a>
+          <a href="https://wa.me/254724533636" class="btn-secondary">WhatsApp Us</a>
         </div>
 
         <!-- Quick highlights -->
@@ -556,21 +735,25 @@
         </div>
       </div>
 
-      <aside class="card" aria-label="contact card">
-        <!-- Lottie hero container (lazy-loaded) -->
-        <div id="lottie-hero" style="width:100%;height:160px;margin-bottom:0.8rem;display:block"></div>
+       <!-- To add a static background image, place a style on the parent section or main tag, e.g.:
+         <section style="background:url('your-image.jpg') center/cover no-repeat;">
+         ...
+         </section>
+         Or add a CSS rule for body, main, or a specific section. -->
+       <aside class="card" aria-label="contact card">
+        
         <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:0.6rem">
-            <div style="width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--red));display:flex;align-items:center;justify-content:center;">
-            <!-- small png icon removed -->
+            <div style="width:64px;height:64px;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <img src="logo2.png" alt="Bio Ray Solutions logo" width="64" height="64" decoding="async" style="width:64px;height:64px;border-radius:10px;object-fit:contain;display:block;" />
           </div>
           <div>
-            <div style="font-weight:700;color:var(--navy)">BR Shield Solutions</div>
-            <div style="font-size:0.9rem;color:rgba(33,33,33,0.7)">Fire, Security systems & surveillance</div>
+            <div style="font-weight:700;color:var(--navy)">Bio Ray Solutions</div>
+            <div style="font-size:0.9rem;color:rgba(33,33,33,0.7)">Fire, Solar installations, Security systems & surveillance</div>
           </div>
         </div>
 
         <div class="contact-line"><svg viewBox="0 0 24 24" fill="none"><path d="M3 5.5C3 4.67 3.67 4 4.5 4h15c.83 0 1.5.67 1.5 1.5v13c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-13z" stroke="rgba(10,42,77,0.8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div style="font-size:0.95rem"><strong>+254 724 533 636 | +254 101 963 655 </strong></div>
+          <div style="font-size:0.95rem"><strong>+254 724 533 636 </strong></div>
         </div>
         <div class="contact-line">
           <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 11-9 11s-9-4-9-11a9 9 0 1 1 18 0z" stroke="rgba(10,42,77,0.8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -588,40 +771,21 @@
           <div style="margin-top:0.5rem"><a href="BR-Shield.vcf" download style="font-size:0.85rem;color:var(--navy)">Download vCard</a></div>
         </div>
       </aside>
-    </section>
+      </section>
+    </main>
+  </div>
 
-    <!-- STATS SECTION -->
-    <section style="background: linear-gradient(135deg, rgba(10,42,77,0.04), rgba(198,40,40,0.04)); padding: 2rem 0; margin: 2rem 0; border-radius: 12px;">
-      <h3 style="text-align: center; margin-bottom: 2rem;">Why Choose BR Shield Solutions?</h3>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">100+</div>
-          <div class="stat-label">Projects Completed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Support Available</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">99%</div>
-          <div class="stat-label">Customer Satisfaction</div>
-        </div>
-      </div>
-    </section>
+  <!-- WHY CHOOSE US + STATS SECTION REMOVED PER REQUEST -->
 
     <!-- ABOUT -->
     <section id="about" aria-label="about">
       <div class="about-grid grid">
         <div>
-          <h3>About BR Shield Solutions</h3>
-          <p><strong>BR Shield Solutions</strong> is a Kenya-based provider of integrated security, fire protection, and solar energy solutions. We deliver smart, reliable systems including CCTV, alarms, access control, electric fencing, fire safety, smart home automation, and solar installations—ensuring safety, efficiency, and peace of mind.</p>
+          <h3>About Bio Ray Solutions</h3>
+          <p><strong>Bio Ray Solutions</strong> is a Kenya-based provider of integrated security, fire protection, and solar energy solutions. We deliver smart, reliable systems including CCTV, alarms, access control, electric fencing, fire safety, smart home automation, and solar installations—ensuring safety, efficiency, and peace of mind.</p>
 
           <h4 style="margin-top:0.8rem">Mission</h4>
-          <p>To provide reliable and innovative security, fire, and solar solutions with integrity and professionalism.</p>
+          <p>To provide sustainable, reliable and innovative security, fire, and solar solutions with integrity and professionalism.</p>
 
           <h4 style="margin-top:0.8rem">Vision</h4>
           <p>To be a trusted global leader in security, safety, and sustainable energy solutions.</p>
@@ -650,65 +814,69 @@
 
     <!-- SERVICES -->
     <section id="services" aria-label="services">
-      <h3>Services</h3>
+      <h3>Security &amp; Solar Services in Nairobi</h3>
+      <p style="max-width:720px;margin:0 0 1.5rem 0;color:rgba(33,33,33,0.8);font-size:0.96rem;">
+        We provide professional installation and maintenance for homes, offices and commercial properties across Nairobi and surrounding areas.
+      </p>
       <div class="services-grid grid">
         <div class="service">
           <a class="img-link" href="cctv-2.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="cctv-2.jpeg" alt="CCTV installation" width="56" height="56" loading="lazy" decoding="async">
+            <img class="service-img" src="cctv-2.jpeg" alt="CCTV installation Nairobi" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
-            <h4>CCTV Installation</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Design & install high-definition camera systems for round-the-clock monitoring.</div>
+            <h4>CCTV Installation (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Secure your home or business with clear, reliable CCTV systems professionally installed and supported in Nairobi, Kenya.</div>
           </div>
         </div>
 
         <div class="service">
-          <a class="img-link" href="solar panels.jpg" target="_blank" rel="noopener">
-            <img class="service-img" src="solar panels.jpg" alt="Solar energy" width="56" height="56" loading="lazy" decoding="async">
+          <a class="img-link" href="electric-fence-2-2.jpeg" target="_blank" rel="noopener">
+            <img class="service-img" src="electric-fence-2-2.jpeg" alt="Electric fencing Nairobi" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
-            <h4>Solar Energy Solutions</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Supply and installation of efficient solar water heating systems for residential and commercial use.</div>
+            <h4>Electric Fencing (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Deter intruders with strong, well-installed electric fences designed for Nairobi residences, estates and commercial properties.</div>
+          </div>
+        </div>
+
+        <div class="service">
+          <a class="img-link" href="Fire Alarm system.jpg" target="_blank" rel="noopener">
+            <img class="service-img" src="Fire%20Alarm%20system.jpg" alt="Fire alarm systems Nairobi" width="56" height="56" loading="lazy" decoding="async">
+          </a>
+          <div>
+            <h4>Fire Alarm Systems (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Protect lives and assets with sensitive fire detection and alarm systems tailored to Kenyan homes, offices and warehouses.</div>
           </div>
         </div>
 
         <div class="service">
           <a class="img-link" href="alarm-system-2.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="alarm-system-2.jpeg" alt="Access control" width="56" height="56" loading="lazy" decoding="async">
+            <img class="service-img" src="alarm-system-2.jpeg" alt="Access control Nairobi" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
-            <h4>Alarm & Access Control Systems</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Integrated alarm and access control solutions including biometrics, card systems, and intrusion detection.</div>
+            <h4>Access Control (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Control who enters your premises with safe, easy-to-use access control solutions for Nairobi offices, apartments and gated homes.</div>
           </div>
         </div>
 
         <div class="service">
-          <a class="img-link" href="electric-fence-2.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="electric-fence-2.jpeg" alt="Electric fencing" width="56" height="56" loading="lazy" decoding="async">
+          <a class="img-link" href="solar panels.jpg" target="_blank" rel="noopener">
+            <img class="service-img" src="solar%20panels.jpg" alt="Solar solutions Nairobi" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
-            <h4>Electric Fencing</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Professional fencing installations to deter and protect property boundaries.</div>
+            <h4>Solar Solutions (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Reduce power bills and enjoy stable electricity with custom solar systems designed for Nairobi’s climate and Kenya Power outages.</div>
           </div>
         </div>
 
         <div class="service">
-          <a class="img-link" href="fire-maintenance.jpg" target="_blank" rel="noopener">
-              <img class="service-img" src="fire-maintenance.jpg" alt="Maintenance and support" width="56" height="56" loading="lazy" decoding="async">
-            </a>
-          <div>
-            <h4>Fire Equipments Supply & Maintenance.</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Supply, installation, inspection, and servicing of certified fire safety equipment to ensure compliance.</div>
-          </div>
-        </div>
-
-        <div class="service">
-          <a class="img-link" href="smart homes.jpeg" target="_blank" rel="noopener">
-            <img class="service-img" src="smart homes.jpeg" alt="Consultation and design" width="56" height="56" loading="lazy" decoding="async">
+          <a class="img-link" href="fire maintenance.jpeg" target="_blank" rel="noopener">
+            <img class="service-img" src="fire maintenance.jpeg" alt="General security installations Nairobi" width="56" height="56" loading="lazy" decoding="async">
           </a>
           <div>
-            <h4>Smart Homes Automation</h4>
-            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Control your lights, security, and home devices from your phone—making your home safer and smarter.
+            <h4>General Security Installations (Nairobi)</h4>
+            <div style="font-size:0.92rem;color:rgba(33,33,33,0.74)">Get complete security setups including alarms, motion sensors and perimeter protection for properties across Nairobi, Kenya.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -746,7 +914,7 @@
 
         <!-- Project 4 -->
         <article class="project">
-          <img src="Solar Heaters.jpeg" alt="Biometric access control — Westlands" loading="lazy" decoding="async">
+          <img src="Solar%20water%20heater.jpeg" alt="Biometric access control — Westlands" loading="lazy" decoding="async">
           <div class="pbody">
             <strong>Solar Water heaters installations — Westlands</strong>
             <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Commercial • Location: Westlands, Nairobi • Description: Installation of a 300 Litre Pressurized solar heater for a 5 Bedroom Mansion. Completed: Feb 2025</p>
@@ -755,7 +923,7 @@
 
         <!-- Project 5 -->
         <article class="project">
-          <img src="Solar shed.jpg" alt="Solar Car Shade — Kitengela" loading="lazy" decoding="async">
+          <img src="Solar%20shed.jpg" alt="Solar Car Shade — Kitengela" loading="lazy" decoding="async">
           <div class="pbody">
             <strong>Solar Car Shade — Kitengela</strong>
             <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Residential • Location: Kitengela, Kajiado • Description: Design and installation of secure solar car shades for safe housing and optimal performance. Completed: Apr 2025</p>
@@ -764,7 +932,7 @@
 
         <!-- Project 6 -->
         <article class="project">
-          <img src="fire-maintenance.jpg" alt="Fire alarm installation — Mombasa Road" loading="lazy" decoding="async">
+          <img src="fire-maintenance-2.jpg" alt="Fire alarm installation — Mombasa Road" loading="lazy" decoding="async">
           <div class="pbody">
             <strong>Warehouse Fire Safety System — Mombasa Road</strong>
             <p style="margin:0.35rem 0;color:rgba(33,33,33,0.75)">Client: Logistics • Location: Mombasa Road, Nairobi • Description: Addressable fire alarm system with 50 smoke detectors, manual call points, and sprinkler integration. Completed: Jun 2025</p>
@@ -778,64 +946,41 @@
       <h3>Product Gallery</h3>
       <div class="gallery-grid grid">
         <!-- Gallery Item 1 -->
-        <a href="cctv-2.jpeg" class="gallery-item img-link">
-          <img src="cctv-2.jpeg" alt="CCTV Camera System" loading="lazy" decoding="async">
+        <a href="Cctv installation service.jpg" class="gallery-item img-link">
+          <img src="Cctv installation service.jpg" alt="CCTV Camera System" loading="lazy" decoding="async">
           <div class="gallery-caption">CCTV Camera System</div>
         </a>
 
         <!-- Gallery Item 2 -->
-        <a href="alarm-system-2.jpeg" class="gallery-item img-link">
-          <img src="alarm-system-2.jpeg" alt="Alarm System Components" loading="lazy" decoding="async">
+        <a href="Fire Alarm system.jpg" class="gallery-item img-link">
+          <img src="Fire Alarm system.jpg" alt="Alarm System Components" loading="lazy" decoding="async">
           <div class="gallery-caption">Alarm System Components</div>
         </a>
 
         <!-- Gallery Item 3 -->
-        <a href="biometric.jpeg" class="gallery-item img-link">
-          <img src="biometric.jpeg" alt="Biometric Access Control" loading="lazy" decoding="async">
+        <a href="Biometric locks.jpg" class="gallery-item img-link">
+          <img src="Biometric locks.jpg" alt="Biometric Access Control" loading="lazy" decoding="async">
           <div class="gallery-caption">Biometric Access Control</div>
         </a>
 
         <!-- Gallery Item 4 -->
-        <a href="electric-fence-2.jpeg" class="gallery-item img-link">
-          <img src="electric-fence-2.jpeg" alt="Electric Fence Installation" loading="lazy" decoding="async">
+        <a href="electric-fence-2-2.jpeg" class="gallery-item img-link">
+          <img src="electric-fence-2-2.jpeg" alt="Electric Fence Installation" loading="lazy" decoding="async">
           <div class="gallery-caption">Electric Fence Installation</div>
         </a>
 
         <!-- Gallery Item 5 -->
-        <a href="fire-maintenance.jpg" class="gallery-item img-link">
-          <img src="fire-maintenance.jpg" alt="Fire System Maintenance" loading="lazy" decoding="async">
+        <a href="fire maintenance.jpeg" class="gallery-item img-link">
+          <img src="fire maintenance.jpeg" alt="Fire System Maintenance" loading="lazy" decoding="async">
           <div class="gallery-caption">Fire System Maintenance</div>
         </a>
 
         <!-- Gallery Item 6 -->
-        <a href="consultations.jpg" class="gallery-item img-link">
-          <img src="consultations.jpg" alt="Security Consultation" loading="lazy" decoding="async">
-          <div class="gallery-caption">Security Consultation</div>
+        <a href="Cyber sec.jpg" class="gallery-item img-link">
+          <img src="Cyber sec.jpg" alt="Cyber Security Consultation" loading="lazy" decoding="async">
+          <div class="gallery-caption">Cyber Security Consultation</div>
         </a>
       </div>
-
-      <!-- Videos Section -->
-      <h3 style="margin-top:2rem">Videos</h3>
-      <div class="gallery-grid grid">
-        <!-- Video Item 1 -->
-        <div class="gallery-item video-item" data-video-src="Automated Curtains 2.mp4" data-video-title="Automated Curtains Runda">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains 2.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Automated Curtains Installations</div>
-        </div>
-
-        <!-- Video Item 2 -->
-        <div class="gallery-item video-item" data-video-src="Automated Curtains.mp4" data-video-title="Automated Curtains Kileleshwa">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Automated Curtains.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Automated Curtains Demo</div>
-        </div>
-
-        <!-- Video Item 3 -->
-        <div class="gallery-item video-item" data-video-src="Control Panel.mp4" data-video-title="Curtains control Panel">
-          <video style="width:100%;height:100%;object-fit:cover;border-radius:10px"><source src="Control Panel.mp4" type="video/mp4"></video>
-          <div class="gallery-caption">Curtains control Panel</div>
-        </div>
-      </div>
-    </section>
 
     <!-- INDUSTRIES WE SERVE -->
     <section id="industries" aria-label="industries">
@@ -909,7 +1054,7 @@
       <div style="display:grid;gap:1rem">
         <div class="testi">
           <strong>Akil Mughal - Packgroup CEO</strong>
-          <p style="margin:0.5rem 0;color:rgba(33,33,33,0.75)">"Professional team and fast installation. I can now monitor my home, business and property from my phone. Highly recommend BR Shield."</p>
+          <p style="margin:0.5rem 0;color:rgba(33,33,33,0.75)">"Professional team and fast installation. I can now monitor my home, business and property from my phone. Highly recommend Bio Ray."</p>
         </div>
 
         <div class="testi">
@@ -920,6 +1065,210 @@
         <div class="testi">
           <strong>Goldenspot Properties Holdings</strong>
           <p style="margin:0.5rem 0;color:rgba(33,33,33,0.75)">"Excellent service level agreement and maintenance support — minimal downtime and responsive support."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section id="case-studies" aria-label="case studies">
+      <h3>Case Studies & Success Stories</h3>
+      <div class="projects-grid grid">
+        <!-- Case Study 1 -->
+        <article class="project" style="background:linear-gradient(135deg, #f5f5f5, #fff)">
+          <img src="Parkgroup.jpeg" alt="PackGroup CCTV Security Case Study" loading="lazy" decoding="async" style="height:180px">
+          <div class="pbody">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <strong style="color:var(--navy);font-size:1.05rem">PackGroup Industrial Area</strong>
+              <span style="background:var(--orange);color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem;font-weight:600">INDUSTRIAL</span>
+            </div>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Challenge:</strong> Needed comprehensive HD surveillance for 50,000 sqft facility.</p>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Solution:</strong> 22-camera HD system with remote access, night vision, and motion detection.</p>
+            <p style="margin:0;color:var(--orange);font-weight:600;font-size:0.9rem">✓ 99.8% uptime | ✓ 24/7 monitoring</p>
+          </div>
+        </article>
+
+        <!-- Case Study 2 -->
+        <article class="project" style="background:linear-gradient(135deg, #f5f5f5, #fff)">
+          <img src="Anthena%20School.jpeg" alt="Anthena School Fire Safety Case Study" loading="lazy" decoding="async" style="height:180px">
+          <div class="pbody">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <strong style="color:var(--navy);font-size:1.05rem">Anthena School</strong>
+              <span style="background:#4CAF50;color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem;font-weight:600">INSTITUTIONAL</span>
+            </div>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Challenge:</strong> Needed Fire safety compliance.</p>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Solution:</strong> Supply of 14 fire extinguishers and 8 fire blankets with proper servicing and maintenance</p>
+            <p style="margin:0;color:#4CAF50;font-weight:600;font-size:0.9rem">✓ 1,000+ daily users | ✓ Zero breaches</p>
+          </div>
+        </article>
+
+        <!-- Case Study 3 -->
+        <article class="project" style="background:linear-gradient(135deg, #f5f5f5, #fff)">
+          <img src="Solar%20water%20heater.jpeg" alt="Residential Solar Installation Case Study" loading="lazy" decoding="async" style="height:180px">
+          <div class="pbody">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <strong style="color:var(--navy);font-size:1.05rem">Westlands Residence</strong>
+              <span style="background:#2196F3;color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem;font-weight:600">RESIDENTIAL</span>
+            </div>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Challenge:</strong> Integrate solar + smart security for 5-bedroom home.</p>
+            <p style="margin:0.35rem 0 0.6rem;color:rgba(33,33,33,0.75);font-size:0.95rem"><strong>Solution:</strong> 300L solar heater, CCTV, alarm system, and smart home automation.</p>
+            <p style="margin:0;color:#2196F3;font-weight:600;font-size:0.9rem">✓ 40% energy savings | ✓ Full home integration</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG / RESOURCES SECTION -->
+    <section id="resources" aria-label="blog and resources">
+      <h3>Security Tips & Resources</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem">
+        <!-- Blog Post 1 -->
+        <article style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border:1px solid rgba(10,42,77,0.04);transition:all 0.3s cubic-bezier(0.2,0.9,0.2,1);" class="blog-card">
+          <div style="background:linear-gradient(135deg,var(--navy),rgba(10,42,77,0.8));color:#fff;padding:1.5rem;height:120px;display:flex;flex-direction:column;justify-content:center">
+            <div style="font-size:0.85rem;opacity:0.9">SECURITY TIPS</div>
+            <h4 style="margin:0.5rem 0 0;font-size:1.15rem">Top 5 Home Security Mistakes</h4>
+          </div>
+          <div style="padding:1.25rem">
+            <p style="margin:0 0 0.8rem;color:rgba(33,33,33,0.7);font-size:0.95rem">Learn the common security mistakes homeowners make and how to avoid them. From weak passwords to poor camera placement.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:0.85rem;color:rgba(33,33,33,0.6)">5 min read</span>
+              <a href="blog\top-5-mistakes.html" style="color:var(--orange);font-weight:600;font-size:0.9rem">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border:1px solid rgba(10,42,77,0.04);transition:all 0.3s cubic-bezier(0.2,0.9,0.2,1);" class="blog-card">
+          <div style="background:linear-gradient(135deg,var(--red),rgba(198,40,40,0.8));color:#fff;padding:1.5rem;height:120px;display:flex;flex-direction:column;justify-content:center">
+            <div style="font-size:0.85rem;opacity:0.9">FIRE SAFETY</div>
+            <h4 style="margin:0.5rem 0 0;font-size:1.15rem">Fire Extinguisher Guide</h4>
+          </div>
+          <div style="padding:1.25rem">
+            <p style="margin:0 0 0.8rem;color:rgba(33,33,33,0.7);font-size:0.95rem">Complete guide to selecting, installing, and maintaining fire extinguishers for your business or home.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:0.85rem;color:rgba(33,33,33,0.6)">7 min read</span>
+              <a href="blog/fire-safety.html" style="color:var(--orange);font-weight:600;font-size:0.9rem">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border:1px solid rgba(10,42,77,0.04);transition:all 0.3s cubic-bezier(0.2,0.9,0.2,1);" class="blog-card">
+          <div style="background:linear-gradient(135deg,var(--orange),rgba(245,124,0,0.8));color:#fff;padding:1.5rem;height:120px;display:flex;flex-direction:column;justify-content:center">
+            <div style="font-size:0.85rem;opacity:0.9">TECHNOLOGY</div>
+            <h4 style="margin:0.5rem 0 0;font-size:1.15rem">Smart Home Security 101</h4>
+          </div>
+          <div style="padding:1.25rem">
+            <p style="margin:0 0 0.8rem;color:rgba(33,33,33,0.7);font-size:0.95rem">Understand smart locks, cameras, and automation systems. Plus: tips for integrating with your existing setup.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:0.85rem;color:rgba(33,33,33,0.6)">6 min read</span>
+              <a href="blog/home-automation.html" style="color:var(--orange);font-weight:600;font-size:0.9rem">Read More →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WEBINAR & EVENTS CALENDAR -->
+    <section id="events" aria-label="webinars and events">
+      <h3>Upcoming Webinars & Events</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+        <!-- Event 1 -->
+        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border-left:4px solid var(--orange)">
+          <div style="background:linear-gradient(135deg,rgba(10,42,77,0.05),rgba(198,40,40,0.05));padding:1.25rem">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <h4 style="margin:0;color:var(--navy);font-size:1.05rem">Security System Planning</h4>
+              <span style="background:var(--orange);color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem">WEBINAR</span>
+            </div>
+            <p style="margin:0.6rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem">Learn how to design the perfect security system for your business needs.</p>
+            <div style="display:flex;gap:0.5rem;margin:0.8rem 0;font-size:0.85rem;color:rgba(33,33,33,0.6)">
+              <span>📅 Feb 20, 2026</span>
+              <span>🕐 2:00 PM EAT</span>
+            </div>
+            <a href="#" style="background:var(--orange);color:#fff;padding:0.6rem 1rem;border-radius:8px;font-weight:600;display:inline-block;font-size:0.9rem">Register Now</a>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border-left:4px solid var(--red)">
+          <div style="background:linear-gradient(135deg,rgba(10,42,77,0.05),rgba(198,40,40,0.05));padding:1.25rem">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <h4 style="margin:0;color:var(--navy);font-size:1.05rem">Fire Safety Workshop</h4>
+              <span style="background:var(--red);color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem">WORKSHOP</span>
+            </div>
+            <p style="margin:0.6rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem">Hands-on training: fire equipment installation, maintenance, and emergency protocols.</p>
+            <div style="display:flex;gap:0.5rem;margin:0.8rem 0;font-size:0.85rem;color:rgba(33,33,33,0.6)">
+              <span>📅 Feb 25, 2026</span>
+              <span>🕐 9:00 AM EAT</span>
+            </div>
+            <a href="#" style="background:var(--red);color:#fff;padding:0.6rem 1rem;border-radius:8px;font-weight:600;display:inline-block;font-size:0.9rem">Register Now</a>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(10,42,77,0.06);border-left:4px solid var(--navy)">
+          <div style="background:linear-gradient(135deg,rgba(10,42,77,0.05),rgba(198,40,40,0.05));padding:1.25rem">
+            <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.8rem">
+              <h4 style="margin:0;color:var(--navy);font-size:1.05rem">Smart Home Integration</h4>
+              <span style="background:var(--navy);color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.75rem">WEBINAR</span>
+            </div>
+            <p style="margin:0.6rem 0;color:rgba(33,33,33,0.7);font-size:0.95rem">Discover how to automate your home with security, lighting, and climate control integration.</p>
+            <div style="display:flex;gap:0.5rem;margin:0.8rem 0;font-size:0.85rem;color:rgba(33,33,33,0.6)">
+              <span>📅 Mar 5, 2026</span>
+              <span>🕐 3:00 PM EAT</span>
+            </div>
+            <a href="#" style="background:var(--navy);color:#fff;padding:0.6rem 1rem;border-radius:8px;font-weight:600;display:inline-block;font-size:0.9rem">Register Now</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;text-align:center">
+        <a href="#" style="color:var(--navy);font-weight:600;font-size:0.95rem">View Full Event Calendar →</a>
+      </div>
+    </section>
+
+    <!-- LIVE CHAT & APPOINTMENT BOOKING -->
+    <section id="contact-advanced" aria-label="live chat and booking">
+      <h3 style="text-align:center">Get Expert Help Now</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto">
+        <!-- Live Chat Section -->
+        <div style="background:linear-gradient(135deg, #fff, #fbfbfb);border-radius:12px;padding:2rem;box-shadow:0 6px 20px rgba(10,42,77,0.06);border:1px solid rgba(10,42,77,0.04)">
+          <div style="text-align:center;margin-bottom:1.5rem">
+            <svg viewBox="0 0 24 24" fill="none" style="width:48px;height:48px;margin:0 auto;color:var(--orange)"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l6.29-.97C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.32-3.88-.87l-.28-.15-2.89.44.44-2.89-.15-.28C4.32 14.73 4 13.41 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/></svg>
+          </div>
+          <h4 style="text-align:center;color:var(--navy);margin:0 0 1rem;font-size:1.1rem">Live Chat Support</h4>
+          <p style="text-align:center;color:rgba(33,33,33,0.7);margin-bottom:1.5rem">Chat with our security experts in real-time. Available 24/7.</p>
+          <div style="display:grid;gap:0.8rem">
+            <a href="https://wa.me/254724533636" target="_blank" rel="noopener" style="background:linear-gradient(135deg, #25D366, #1EA852);color:#fff;padding:1rem;border-radius:10px;font-weight:600;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.5rem;transition:all 0.3s ease">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.148-.67.15-.23.297-.921.967-1.128 1.165-.206.198-.412.223-.71.054-.297-.149-1.255-.413-2.393-1.476-.887-.794-1.487-1.776-1.661-2.073-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.444 0-2.804-.503-3.814-1.406l-.272-.217-2.82.738.749-2.724-.175-.277A6.471 6.471 0 015.659 2.879c1.012-.915 2.384-1.432 3.814-1.432 2.821 0 5.418 1.868 6.374 4.53.957 2.662.191 5.707-1.932 7.656-1.122 1.012-2.603 1.584-4.181 1.584-.575 0-1.142-.082-1.696-.24l-.277-.08-2.883.755.738-2.72-.176-.277A6.467 6.467 0 016.251 4.979Z"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a href="#contact" style="background:var(--navy);color:#fff;padding:1rem;border-radius:10px;font-weight:600;text-align:center;transition:all 0.3s ease" onmouseover="this.style.background='var(--red)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--navy)';this.style.transform='translateY(0)'">
+              Send Message
+            </a>
+          </div>
+        </div>
+
+        <!-- Appointment Booking Section -->
+        <div style="background:linear-gradient(135deg, #fff, #fbfbfb);border-radius:12px;padding:2rem;box-shadow:0 6px 20px rgba(10,42,77,0.06);border:1px solid rgba(10,42,77,0.04)">
+          <div style="text-align:center;margin-bottom:1.5rem">
+            <svg viewBox="0 0 24 24" fill="none" style="width:48px;height:48px;margin:0 auto;color:var(--orange)"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/></svg>
+          </div>
+          <h4 style="text-align:center;color:var(--navy);margin:0 0 1rem;font-size:1.1rem">Book a Consultation</h4>
+          <p style="text-align:center;color:rgba(33,33,33,0.7);margin-bottom:1.5rem">Schedule a free on-site assessment with one of our experts.</p>
+          <div style="display:grid;gap:0.8rem">
+            <input type="text" placeholder="Your name" style="padding:0.85rem;border:1px solid rgba(33,33,33,0.12);border-radius:10px;font-size:0.95rem;transition:all 0.2s ease" onfocus="this.style.border='1px solid var(--navy)';this.style.boxShadow='0 0 0 3px rgba(10,42,77,0.08)'" onblur="this.style.border='1px solid rgba(33,33,33,0.12)';this.style.boxShadow='none'">
+            <input type="email" placeholder="Email address" style="padding:0.85rem;border:1px solid rgba(33,33,33,0.12);border-radius:10px;font-size:0.95rem;transition:all 0.2s ease" onfocus="this.style.border='1px solid var(--navy)';this.style.boxShadow='0 0 0 3px rgba(10,42,77,0.08)'" onblur="this.style.border='1px solid rgba(33,33,33,0.12)';this.style.boxShadow='none'">
+            <input type="tel" placeholder="Phone number" style="padding:0.85rem;border:1px solid rgba(33,33,33,0.12);border-radius:10px;font-size:0.95rem;transition:all 0.2s ease" onfocus="this.style.border='1px solid var(--navy)';this.style.boxShadow='0 0 0 3px rgba(10,42,77,0.08)'" onblur="this.style.border='1px solid rgba(33,33,33,0.12)';this.style.boxShadow='none'">
+            <select style="padding:0.85rem;border:1px solid rgba(33,33,33,0.12);border-radius:10px;font-size:0.95rem;background:#fff;transition:all 0.2s ease" onfocus="this.style.border='1px solid var(--navy)';this.style.boxShadow='0 0 0 3px rgba(10,42,77,0.08)'" onblur="this.style.border='1px solid rgba(33,33,33,0.12)';this.style.boxShadow='none'">
+              <option value="">Select service type</option>
+              <option value="security">Security Systems</option>
+              <option value="fire">Fire Safety</option>
+              <option value="solar">Solar Solutions</option>
+              <option value="access">Access Control</option>
+            </select>
+            <button style="background:var(--orange);color:#fff;padding:1rem;border-radius:10px;border:0;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.background='var(--red)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(198,40,40,0.2)'" onmouseout="this.style.background='var(--orange)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+              Schedule Appointment
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1009,7 +1358,7 @@
         <aside class="profile-card">
           <h4 style="margin-bottom:0.5rem">Company Details</h4>
           <div style="font-size:0.95rem">
-            <div><strong>Name:</strong> BR Shield Solutions</div>
+            <div><strong>Name:</strong> Bio Ray Solutions</div>
             <div><strong>Phone:</strong> +254 724 533 636</div>
             <div><strong>Phone:</strong> +254 101 963 655</div>
             <div><strong>Email:</strong> <a href="mailto:brshieldsolutions@gmail.com">brshieldsolutions@gmail.com</a></div>
@@ -1024,7 +1373,7 @@
           <div style="margin-top:0.9rem">
             <div style="font-size:0.9rem;margin-bottom:0.5rem">Find us on the map</div>
             <!-- Google Maps embed centered on Nairobi -->
-            <iframe title="BR Shield location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8193794505637!2d36.77719!3d-1.2865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6d84d3047%3A0x27d4d0d0d0d0d0d0!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890" style="width:100%;height:160px;border:0;border-radius:8px;margin-top:0.5rem" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Bio Ray location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8193794505637!2d36.77719!3d-1.2865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6d84d3047%3A0x27d4d0d0d0d0d0d0!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890" style="width:100%;height:160px;border:0;border-radius:8px;margin-top:0.5rem" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
           <div style="margin-top:0.8rem;display:flex;gap:0.5rem">
@@ -1037,12 +1386,28 @@
       </div>
     </section>
 
+    <!-- Closing CTA Section -->
+    <section id="cta-final" style="background:linear-gradient(135deg, rgba(10,42,77,0.08), rgba(245,124,0,0.08)); padding: 2.5rem 1.5rem; margin-top: 2rem; border-radius: 12px;">
+      <h3 style="text-align:center;margin-bottom:1rem;">Ready to Secure Your Property or Cut Power Costs?</h3>
+      <p style="max-width:720px;margin:0 auto 1rem auto;text-align:center;color:rgba(33,33,33,0.85);font-size:0.98rem;">
+        Whether you need CCTV, electric fencing, fire alarms, access control or solar in Nairobi, Bio Ray Solutions is ready to help. Share a few details and we will advise you on the best option for your home or business.
+      </p>
+      <p style="text-align:center;margin:0 0 1.5rem 0;font-weight:600;color:var(--navy);">
+        Request a Free Quote or Site Assessment Today.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+        <a href="#contact" class="btn-primary" style="text-align:center;">Get My Free Quote</a>
+        <a href="tel:+254724533636" class="btn-secondary" style="text-align:center;">Call: +254 724 533 636</a>
+        <a href="https://wa.me/254724533636" class="btn-secondary" style="text-align:center;">WhatsApp Us Now</a>
+      </div>
+    </section>
+
     <!-- Website QR Section -->
     <section style="background: linear-gradient(135deg, rgba(10,42,77,0.04), rgba(198,40,40,0.04)); padding: 2rem 0; margin-top: 2rem; border-radius: 12px;">
       <h3 style="text-align: center; margin-bottom: 1.5rem;">Visit Our Website</h3>
       <div style="text-align: center">
         <a href="https://br-shield-solutions.vercel.app" target="_blank" rel="noopener" style="display:inline-block">
-          <img src="qr-site.png" alt="Scan to visit BR Shield Solutions website" style="width:200px;height:200px;border-radius:12px;box-shadow:0 8px 24px rgba(10,42,77,0.1)"/>
+          <img src="qr-site.png" alt="Scan to visit Bio Ray Solutions website" style="width:200px;height:200px;border-radius:12px;box-shadow:0 8px 24px rgba(10,42,77,0.1)"/>
         </a>
         <p style="margin-top:1rem;color:rgba(33,33,33,0.75)">Scan to visit <strong>https://br-shield-solutions.vercel.app</strong></p>
       </div>
@@ -1053,7 +1418,7 @@
   <!-- Footer -->
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-      <div>© <strong>BR Shield Solutions</strong> — Nairobi, Kenya</div>
+      <div>© <strong>Bio Ray Solutions</strong> — Nairobi, Kenya</div>
       <div style="display:flex;gap:0.75rem;align-items:center">
         <div style="font-size:0.9rem;color:rgba(33,33,33,0.6)">Follow us:</div>
         <a href="https://facebook.com/brshieldsolutions" target="_blank" rel="noopener" style="color:var(--navy);font-size:1.2rem" aria-label="Facebook">
@@ -1066,11 +1431,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
       </div>
-      <div style="font-size:0.9rem;color:rgba(33,33,33,0.6);display:flex;gap:0.75rem;align-items:center">
-        <div>Designed with your brand palette</div>
-        <a href="#contact" class="ctasmall">Request Demo</a>
-        <a href="#contact" class="cta-quote">Request a Quote</a>
-      </div>
+      <div style="font-size:0.9rem;color:rgba(33,33,33,0.6)">Designed with your brand palette • <a href="#contact">Request Demo</a></div>
     </div>
   </footer>
   
@@ -1080,18 +1441,9 @@
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <!-- Video Lightbox modal -->
-  <div id="video-lightbox" class="video-lightbox" aria-hidden="true" role="dialog" aria-label="Video viewer">
-    <button id="video-lightbox-close" class="video-lightbox-close" aria-label="Close">&times;</button>
-    <video id="video-lightbox-player" controls>
-      <source id="video-lightbox-src" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
   <!-- Floating QR button for mobile (opens existing lightbox) -->
   <button id="qr-fab" class="qr-fab" aria-label="Show contact QR">
-    <img src="QR CODE.png" alt="BR Shield QR code" loading="lazy" decoding="async">
+    <img src="qr-vcard.png" alt="BR Shield QR code" loading="lazy" decoding="async">
   </button>
 
   <script>
@@ -1131,6 +1483,16 @@
       // Close on outside click, scroll, or resize
       document.addEventListener('click', function(e){ if(!e.target.closest('nav')) closeAll(); });
       window.addEventListener('resize', closeAll); window.addEventListener('scroll', closeAll, true);
+
+      // Close mobile nav when a link is tapped (for small screens)
+      var navToggle = document.getElementById('nav-toggle');
+      document.querySelectorAll('nav a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 980 && navToggle){
+            navToggle.checked = false;
+          }
+        });
+      });
     })();
 
     (function(){
@@ -1142,7 +1504,7 @@
         var img = fab.querySelector('img');
         if(lb && lbImg){
           lbImg.src = img.src;
-          lbImg.alt = img.alt || 'BR Shield QR code';
+          lbImg.alt = img.alt || 'Bio Ray QR code';
           lb.hidden = false;
           lb.classList.add('open');
           lb.removeAttribute('aria-hidden');
@@ -1189,45 +1551,6 @@
       document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
       lb.addEventListener('click', function(e){ if(e.target === this) closeLightbox(); });
       document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
-    })();
-
-    (function(){
-      var vlb = document.getElementById('video-lightbox');
-      var videoPlayer = document.getElementById('video-lightbox-player');
-      var videoSrc = document.getElementById('video-lightbox-src');
-
-      function openVideoLightbox(src, title){
-        videoSrc.src = src;
-        videoPlayer.load();
-        vlb.classList.add('open');
-        vlb.removeAttribute('aria-hidden');
-        document.body.style.overflow = 'hidden';
-        videoPlayer.play();
-      }
-
-      function closeVideoLightbox(){
-        vlb.classList.remove('open');
-        vlb.setAttribute('aria-hidden', 'true');
-        videoPlayer.pause();
-        videoSrc.src = '';
-        document.body.style.overflow = '';
-      }
-
-      document.querySelectorAll('.video-item').forEach(function(item){
-        item.addEventListener('click', function(){
-          var src = this.dataset.videoSrc;
-          var title = this.dataset.videoTitle;
-          openVideoLightbox(src, title);
-        });
-      });
-
-      document.getElementById('video-lightbox-close').addEventListener('click', closeVideoLightbox);
-      vlb.addEventListener('click', function(e){
-        if(e.target === this) closeVideoLightbox();
-      });
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape' && vlb.classList.contains('open')) closeVideoLightbox();
-      });
     })();
 
     // FAQ toggle functionality
@@ -1334,111 +1657,15 @@
         }, { passive: true });
       }
 
-      // Add simple parallax on mousemove for larger screens (lightweight)
-      function setupParallax(){
-        if(window.innerWidth < 720) return; // skip on small devices
-        document.querySelectorAll('.parallax-img').forEach(function(wrapper){
-          var img = wrapper.querySelector('img');
-          if(!img) return;
-          wrapper.addEventListener('mousemove', function(e){
-            var rect = wrapper.getBoundingClientRect();
-            var dx = (e.clientX - rect.left) / rect.width - 0.5;
-            var dy = (e.clientY - rect.top) / rect.height - 0.5;
-            img.style.transform = 'scale(1.04) translate(' + (dx*6) + 'px, ' + (dy*6) + 'px)';
-          });
-          wrapper.addEventListener('mouseleave', function(){ img.style.transform = ''; });
-        });
-      }
-
-      // Lightweight service tilt on pointer move (desktop only)
-      function setupServiceTilt(){
-        if(window.innerWidth < 720) return;
-        document.querySelectorAll('.service').forEach(function(card){
-          var raf = null;
-          function onPointerMove(e){
-            if(raf) return;
-            raf = requestAnimationFrame(function(){
-              var rect = card.getBoundingClientRect();
-              var cx = rect.left + rect.width/2;
-              var cy = rect.top + rect.height/2;
-              var dx = (e.clientX - cx) / (rect.width/2);
-              var dy = (e.clientY - cy) / (rect.height/2);
-              var rx = (-dy * 3).toFixed(2);
-              var ry = (dx * 3).toFixed(2);
-              card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(0)';
-              raf = null;
-            });
-          }
-          card.addEventListener('pointermove', onPointerMove, { passive: true });
-          card.addEventListener('pointerleave', function(){ card.style.transform = ''; });
-        });
-      }
-
       document.addEventListener('DOMContentLoaded', function(){
         showHero();
         setupReveal();
-        setupNavbarAutoHide();
-        if(!reduce && !isSmallScreen && !isTouch) { setupParallax(); setupServiceTilt(); }
+        // navbar auto-hide disabled to keep header fixed and always visible
+        // setupNavbarAutoHide();
       });
     })();
   </script>
 
-  <!-- Deferred libraries for advanced animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer crossorigin="anonymous"></script>
-
-  <script>
-    (function(){
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-      var isSmallScreen = Math.min(window.innerWidth, window.innerHeight) < 768;
-
-      function initLottie(){
-        if(reduce) return;
-        if(typeof lottie === 'undefined') return;
-        var container = document.getElementById('lottie-hero');
-        if(!container) return;
-        var obs = new IntersectionObserver(function(entries, o){
-          entries.forEach(function(e){
-            if(e.isIntersecting){
-              try{
-                // lazy-load hero lottie only when visible
-                lottie.loadAnimation({ container: container, renderer: 'svg', loop: true, autoplay: true, path: 'https://assets9.lottiefiles.com/packages/lf20_tfb3estd.json' });
-              }catch(err){}
-              o.unobserve(container);
-            }
-          });
-        }, { root:null, threshold: 0.05 });
-        obs.observe(container);
-      }
-
-      function initParticles(){
-        if(reduce || isSmallScreen || isTouch) return; // guard heavy particles on mobile/touch
-        var hero = document.querySelector('.hero'); if(!hero) return;
-        var canvas = document.createElement('canvas'); canvas.id = 'hero-canvas';
-        canvas.style.position = 'absolute'; canvas.style.top='0'; canvas.style.left='0'; canvas.style.width='100%'; canvas.style.height='100%'; canvas.style.zIndex='0'; canvas.style.pointerEvents='none';
-        canvas.setAttribute('aria-hidden','true'); hero.insertBefore(canvas, hero.firstChild);
-        var ctx = canvas.getContext('2d'); var DPR = Math.max(1, window.devicePixelRatio || 1);
-        var particles = [];
-        function resize(){ canvas.width = Math.floor(canvas.clientWidth * DPR); canvas.height = Math.floor(canvas.clientHeight * DPR); ctx.setTransform(DPR,0,0,DPR,0,0); }
-        function createParticle(){ var w = canvas.clientWidth, h = canvas.clientHeight; return { x: Math.random()*w, y: Math.random()*h, r:1+Math.random()*2.8, vx:(Math.random()-0.5)*0.3, vy:-0.15-Math.random()*0.15, alpha:0.12+Math.random()*0.18 }; }
-        function init(){ resize(); particles = new Array(Math.min(60, Math.floor(canvas.clientWidth/12))).fill(0).map(createParticle); }
-        var last = performance.now(); function frame(now){ var dt = Math.min(40, now-last); last = now; ctx.clearRect(0,0,canvas.width,canvas.height); ctx.save(); ctx.globalCompositeOperation='lighter'; particles.forEach(function(p){ p.x += p.vx * dt * 0.06; p.y += p.vy * dt * 0.06; if(p.y + p.r < -10 || p.x < -20 || p.x > canvas.clientWidth + 20){ Object.assign(p, createParticle()); p.y = canvas.clientHeight + 10; } ctx.beginPath(); ctx.fillStyle = 'rgba(198,40,40,'+p.alpha+')'; ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); }); ctx.restore(); requestAnimationFrame(frame); }
-        window.addEventListener('resize', function(){ init(); }, { passive:true }); init(); requestAnimationFrame(frame);
-      }
-
-      function initGSAP(){
-        if(reduce || isSmallScreen) return; if(typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return; try{ gsap.registerPlugin(ScrollTrigger); }catch(e){}
-        var projects = document.querySelectorAll('.projects-grid .project'); if(!projects || projects.length===0) return;
-        var tl = gsap.timeline({ scrollTrigger: { trigger: '.projects-grid', start: 'top 75%', end: 'bottom 25%', scrub: 0.6 } });
-        tl.to('.projects-grid .project', { scale:1.03, y:-8, stagger:{ each:0.08 }, duration:0.8, ease:'power1.out' }, 0);
-        tl.to('.projects-grid .project', { scale:1, y:0, stagger:{ each:0.08 }, duration:0.8, ease:'power1.in' }, 0.6);
-      }
-
-      function whenLoaded(cb){ if(document.readyState==='complete') cb(); else window.addEventListener('load', cb); }
-      whenLoaded(function(){ setTimeout(function(){ initLottie(); initParticles(); initGSAP(); }, 260); });
-    })();
-  </script>
+  <!-- Heavy animation libraries and particle effects removed for performance -->
 </body>
 </html>
