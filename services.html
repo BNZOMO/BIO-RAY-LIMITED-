@@ -1,174 +1,534 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Security &amp; Solar Services in Nairobi | Bio Ray</title>
-  <meta name="description" content="Explore Bio Ray Solutions security and solar services in Nairobi, including CCTV, electric fencing, fire alarms, access control, solar systems and general security installations." />
-  <style>
-    :root{
-      --navy:#0A2A4D;
-      --red:#C62828;
-      --orange:#F57C00;
-      --light:#F5F5F5;
-      --charcoal:#212121;
-      --white:#ffffff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--charcoal);
-      background:#ffffff;
-      -webkit-font-smoothing:antialiased;
-    }
-    a{color:inherit;text-decoration:none}
-    header{
-      background:linear-gradient(90deg,var(--navy),#092a48);
-      color:#fff;
-      padding:0.8rem 1.5rem;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .brand{display:flex;align-items:center;gap:0.6rem;}
-    .brand img{width:40px;height:40px;border-radius:8px;object-fit:contain;background:#fff;}
-    .brand-title{font-size:0.98rem;font-weight:600;}
-    .brand-tag{font-size:0.8rem;opacity:0.9;}
-    .btn-small{
-      background:var(--orange);
-      color:#fff;
-      padding:0.4rem 0.85rem;
-      border-radius:999px;
-      font-size:0.8rem;
-      font-weight:600;
-    }
-    main{max-width:1100px;margin:0 auto;padding:1.8rem 1.2rem 2.5rem;}
-    h1{font-size:1.9rem;margin:0 0 0.6rem;color:var(--navy);}
-    .lead{font-size:1rem;margin:0 0 1.2rem;color:rgba(33,33,33,0.85);}
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:1.2rem;
-      margin-top:1rem;
-    }
-    .service-card{
-      background:#fff;
-      border-radius:12px;
-      padding:1.1rem 1.2rem 1.2rem;
-      border:1px solid rgba(10,42,77,0.08);
-      box-shadow:0 4px 14px rgba(10,42,77,0.06);
-    }
-    .service-card h2{
-      font-size:1.1rem;
-      margin:0 0 0.4rem;
-      color:var(--navy);
-    }
-    .service-card p{
-      margin:0 0 0.7rem;
-      font-size:0.9rem;
-      color:rgba(33,33,33,0.82);
-    }
-    .service-card a{
-      font-size:0.88rem;
-      font-weight:600;
-      color:var(--navy);
-    }
-    .section-label{
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.12em;
-      color:rgba(33,33,33,0.7);
-      margin-bottom:0.2rem;
-    }
-    footer{
-      border-top:1px solid rgba(10,42,77,0.1);
-      padding:1.2rem;
-      font-size:0.8rem;
-      text-align:center;
-      color:rgba(33,33,33,0.7);
-      background:#fafafa;
-      margin-top:1.5rem;
-    }
-    @media (max-width:768px){
-      main{padding:1.6rem 0.9rem 2.2rem;}
-      h1{font-size:1.6rem;}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="brand">
-      <a href="index.html">
-        <img src="logo2.png" alt="Bio Ray Solutions logo">
-      </a>
-      <div>
-        <div class="brand-title">Bio Ray Solutions</div>
-        <div class="brand-tag">Security &amp; Solar • Nairobi</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bio Ray Solutions offers comprehensive security and solar services including CCTV, electric fencing, fire alarms, access control, and solar solutions."
+    />
+    <title>Services - Bio Ray Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <a href="index.html">
+          <img src="logo2.png" alt="Bio Ray Solutions" class="logo" />
+        </a>
+        <div>
+          <div class="brand-name">Bio Ray Solutions</div>
+          <div class="brand-tagline">Security & Solar • Nairobi</div>
+        </div>
       </div>
-    </div>
-    <a href="tel:+254724533636" class="btn-small">Call Us</a>
-  </header>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">☰</label>
+      <nav>
+        <ul>
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item">
+            <a href="services.html" class="active">Services</a>
+          </li>
+          <li class="nav-item"><a href="projects.html">Projects</a></li>
+          <li class="nav-item"><a href="testimonials.html">Testimonials</a></li>
+          <li class="nav-item"><a href="management.html">Management</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="tel:+254724533636" class="cta-button">Call Now</a>
+    </header>
 
-  <main>
-    <div class="section-label">Our services</div>
-    <h1>Security &amp; Solar Services in Nairobi</h1>
-    <p class="lead">
-      We design, install and support CCTV, electric fencing, fire alarms, access control, solar solutions and complete security systems for homes and businesses in Nairobi, Kenya.
-    </p>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="hero-section"
+        style="
+          background:
+            linear-gradient(
+              135deg,
+              rgba(10, 42, 77, 0.8),
+              rgba(198, 40, 40, 0.8)
+            ),
+            url(&quot;Bacground Image.jpg&quot;) center/cover no-repeat;
+          min-height: 280px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          padding: 3rem 1.5rem;
+        "
+      >
+        <div>
+          <h1 style="font-size: 2.2rem; margin: 0 0 0.5rem; font-weight: 700">
+            Our Services
+          </h1>
+          <p style="font-size: 1rem; margin: 0; opacity: 0.95">
+            Comprehensive security and solar solutions for your peace of mind
+          </p>
+        </div>
+      </section>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <h2>CCTV Installation (Nairobi)</h2>
-        <p>Clear cameras, secure recording and mobile viewing so you can check on your home or business from anywhere.</p>
-        <a href="cctv-installation-nairobi.html">View CCTV service &raquo;</a>
-      </article>
+      <!-- Core Services Grid -->
+      <section class="section-light">
+        <div class="container">
+          <div class="section-label">Core Services</div>
+          <h2>Security & Solar Solutions</h2>
+          <p class="section-intro">
+            We design, install, and maintain complete security and solar systems
+            for residential and commercial properties.
+          </p>
 
-      <article class="service-card">
-        <h2>Electric Fencing (Nairobi)</h2>
-        <p>Strong perimeter protection for walls and compounds in Nairobi estates, homes and commercial properties.</p>
-        <a href="electric-fencing-nairobi.html">View electric fencing service &raquo;</a>
-      </article>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="card-icon">📹</div>
+              <h3>CCTV Systems</h3>
+              <p>
+                HD cameras with 24/7 recording, remote monitoring, and cloud
+                storage for complete visibility of your property.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
 
-      <article class="service-card">
-        <h2>Fire Alarm Systems (Nairobi)</h2>
-        <p>Fire detection and alarm systems for homes, offices, schools and warehouses to protect lives and assets.</p>
-        <a href="fire-alarm-systems-nairobi.html">View fire alarm service &raquo;</a>
-      </article>
+            <div class="service-card">
+              <div class="card-icon">⚡</div>
+              <h3>Electric Fencing</h3>
+              <p>
+                Perimeter protection systems with shock deterrent for walls,
+                compounds, and estates across Nairobi.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
 
-      <article class="service-card">
-        <h2>Access Control (Nairobi)</h2>
-        <p>Biometric, card and PIN access systems that control who enters your gates, doors and sensitive areas.</p>
-        <a href="access-control-nairobi.html">View access control service &raquo;</a>
-      </article>
+            <div class="service-card">
+              <div class="card-icon">🚨</div>
+              <h3>Fire Alarm Systems</h3>
+              <p>
+                Fire detection and alarm systems for homes, offices, schools,
+                and warehouses to protect lives and property.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
 
-      <article class="service-card">
-        <h2>Solar Solutions (Nairobi)</h2>
-        <p>Solar water heating and backup systems designed for Nairobi’s climate to cut power bills and reduce outages.</p>
-        <a href="solar-solutions-nairobi.html">View solar service &raquo;</a>
-      </article>
+            <div class="service-card">
+              <div class="card-icon">🔐</div>
+              <h3>Access Control</h3>
+              <p>
+                Biometric, card, and PIN systems for doors, gates, and secure
+                areas with real-time access logs.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
 
-      <article class="service-card">
-        <h2>General Security Installations</h2>
-        <p>Alarms, sensors and integrated security setups for homes, offices, shops and small estates across Nairobi.</p>
-        <a href="security-installations-nairobi.html">View security installations &raquo;</a>
-      </article>
-    </div>
+            <div class="service-card">
+              <div class="card-icon">☀️</div>
+              <h3>Solar Solutions</h3>
+              <p>
+                Solar water heating and backup power systems designed for
+                Nairobi's climate to reduce energy costs.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
 
-    <section style="margin-top:2rem;">
-      <h2 style="font-size:1.2rem;color:var(--navy);margin:0 0 0.5rem;">Ready to Secure Your Property?</h2>
-      <p style="margin:0 0 0.9rem;font-size:0.95rem;color:rgba(33,33,33,0.85);">
-        Tell us which service you are interested in and a few details about your site. We will recommend the best option and share a clear quote.
-      </p>
-      <p style="margin:0;font-size:0.9rem;">
-        <strong>Next step:</strong> <a href="index.html#contact" style="color:var(--navy);font-weight:600;">Request a quote or site visit &raquo;</a>
-      </p>
-    </section>
-  </main>
+            <div class="service-card">
+              <div class="card-icon">🛡️</div>
+              <h3>General Security</h3>
+              <p>
+                Integrated alarm systems, motion sensors, and security setups
+                for homes, offices, and small estates.
+              </p>
+              <a href="contact.html" class="card-link">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    © Bio Ray Solutions — Security &amp; Solar Services in Nairobi, Kenya
-  </footer>
-</body>
+      <!-- Industry Solutions -->
+      <section
+        class="section-dark"
+        style="
+          background: linear-gradient(135deg, #0a2a4d, #092a48);
+          color: white;
+          padding: 3rem 1.5rem;
+        "
+      >
+        <div class="container">
+          <div
+            style="
+              font-size: 0.8rem;
+              text-transform: uppercase;
+              letter-spacing: 0.12em;
+              opacity: 0.85;
+              margin-bottom: 0.5rem;
+            "
+          >
+            Industry Solutions
+          </div>
+          <h2 style="color: white; margin-bottom: 0.5rem">
+            Security for Every Sector
+          </h2>
+          <p style="opacity: 0.9; margin-bottom: 2rem">
+            Tailored security and solar solutions for different property types
+            and industries.
+          </p>
+
+          <div class="services-grid">
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Residential Properties</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                CCTV, electric fencing, and alarms for homes, apartments, and
+                residential estates.
+              </p>
+            </div>
+
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Commercial Offices</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Access control, surveillance, and fire systems for offices and
+                business premises.
+              </p>
+            </div>
+
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Industrial Facilities</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Heavy-duty security systems and monitoring for warehouses,
+                factories, and plants.
+              </p>
+            </div>
+
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Educational Institutions</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Schools and universities benefit from CCTV, access control, and
+                comprehensive security.
+              </p>
+            </div>
+
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Retail & Malls</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Security and surveillance systems for shopping centers, shops,
+                and retail stores.
+              </p>
+            </div>
+
+            <div
+              class="service-card"
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white">Healthcare Facilities</h3>
+              <p style="color: rgba(255, 255, 255, 0.9)">
+                Clinics and hospitals with secure access, surveillance, and
+                emergency response systems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service Timeline / Process -->
+      <section class="section-light">
+        <div class="container">
+          <h2>Our Installation Process</h2>
+          <p class="section-intro">
+            From initial consultation to post-installation support
+          </p>
+
+          <div
+            class="steps-grid"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 2rem;
+              margin-top: 2rem;
+            "
+          >
+            <div style="text-align: center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--orange);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  font-weight: bold;
+                  margin: 0 auto 1rem;
+                "
+              >
+                1
+              </div>
+              <h3 style="margin: 0 0 0.5rem; color: var(--navy)">
+                Consultation
+              </h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 0.9rem;
+                  color: rgba(33, 33, 33, 0.8);
+                "
+              >
+                Site assessment and custom solution design
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--orange);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  font-weight: bold;
+                  margin: 0 auto 1rem;
+                "
+              >
+                2
+              </div>
+              <h3 style="margin: 0 0 0.5rem; color: var(--navy)">Quotation</h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 0.9rem;
+                  color: rgba(33, 33, 33, 0.8);
+                "
+              >
+                Clear, itemized pricing with no hidden costs
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--orange);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  font-weight: bold;
+                  margin: 0 auto 1rem;
+                "
+              >
+                3
+              </div>
+              <h3 style="margin: 0 0 0.5rem; color: var(--navy)">
+                Installation
+              </h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 0.9rem;
+                  color: rgba(33, 33, 33, 0.8);
+                "
+              >
+                Professional setup and system testing
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--orange);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  font-weight: bold;
+                  margin: 0 auto 1rem;
+                "
+              >
+                4
+              </div>
+              <h3 style="margin: 0 0 0.5rem; color: var(--navy)">Training</h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 0.9rem;
+                  color: rgba(33, 33, 33, 0.8);
+                "
+              >
+                Complete user training and handover
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  background: var(--orange);
+                  color: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  font-weight: bold;
+                  margin: 0 auto 1rem;
+                "
+              >
+                5
+              </div>
+              <h3 style="margin: 0 0 0.5rem; color: var(--navy)">Support</h3>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 0.9rem;
+                  color: rgba(33, 33, 33, 0.8);
+                "
+              >
+                24/7 maintenance and technical support
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section
+        class="cta-section"
+        style="
+          background: linear-gradient(135deg, var(--red), var(--navy));
+          color: white;
+          padding: 2.5rem 1.5rem;
+          text-align: center;
+          border-radius: 12px;
+          margin: 3rem 1.5rem;
+        "
+      >
+        <div class="container">
+          <h2 style="color: white; margin-top: 0">
+            Ready to Secure Your Property?
+          </h2>
+          <p style="font-size: 1rem; opacity: 0.95; margin-bottom: 1.5rem">
+            Get a free site assessment and custom quote from our security
+            experts.
+          </p>
+          <a
+            href="contact.html"
+            class="cta-button"
+            style="
+              background: white;
+              color: var(--navy);
+              display: inline-block;
+              padding: 0.8rem 2rem;
+              border-radius: 999px;
+              font-weight: 600;
+              margin-right: 0.8rem;
+            "
+            >Get a Quote</a
+          >
+          <a
+            href="tel:+254724533636"
+            class="cta-button"
+            style="
+              background: transparent;
+              border: 2px solid white;
+              color: white;
+              display: inline-block;
+              padding: 0.8rem 2rem;
+              border-radius: 999px;
+              font-weight: 600;
+            "
+            >Call Us Now</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Bio Ray</h4>
+          <p>
+            Security & Solar Solutions for homes and businesses in Nairobi,
+            Kenya.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>
+            Phone: <a href="tel:+254724533636">+254 724 533636</a><br />
+            Email:
+            <a href="mailto:brshieldsolutions@gmail.com"
+              >brshieldsolutions@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Bio Ray Solutions. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      document
+        .getElementById("nav-toggle")
+        .addEventListener("change", function () {
+          var nav = document.querySelector("nav ul");
+          if (this.checked) {
+            nav.style.maxHeight = "520px";
+          } else {
+            nav.style.maxHeight = "0";
+          }
+        });
+    </script>
+  </body>
 </html>
-
