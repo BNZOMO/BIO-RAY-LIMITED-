@@ -131,15 +131,10 @@
             solutions.
           </p>
 
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-              gap: 2.5rem;
-              margin-bottom: 3rem;
-            "
-          >
-            <!-- Director 1 -->
+          <!-- HIERARCHY: MANAGING DIRECTOR (CENTER) + TWO DIRECTORS (BELOW) -->
+
+          <!-- Managing Director - Top Center -->
+          <div style="text-align: center; margin-bottom: 3rem">
             <article
               class="profile-card"
               style="
@@ -147,6 +142,8 @@
                 padding: 2rem;
                 text-align: center;
                 border-left: 4px solid var(--orange);
+                max-width: 340px;
+                margin: 0 auto;
               "
             >
               <div
@@ -156,6 +153,7 @@
                   border-radius: 12px;
                   overflow: hidden;
                   margin: 0 auto 1.5rem;
+                  border: 4px solid var(--orange);
                 "
               >
                 <img
@@ -223,57 +221,239 @@
                 </p>
               </div>
             </article>
+          </div>
 
-            <!-- Team highlight box -->
+          <!-- Two Directors Below (Grid Layout) -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2.5rem;
+              margin-bottom: 3rem;
+              max-width: 800px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <!-- Director 2 - Left -->
             <article
+              class="profile-card"
               style="
+                background: linear-gradient(135deg, #fff, #f5f5f5);
                 padding: 2rem;
-                border-radius: 12px;
-                background: linear-gradient(
-                  135deg,
-                  rgba(10, 42, 77, 0.08),
-                  rgba(245, 124, 0, 0.08)
-                );
-                border-left: 4px solid var(--navy);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                text-align: center;
+                border-left: 4px solid var(--red);
               "
             >
-              <h4
-                style="color: var(--navy); margin: 0 0 1rem; font-size: 1.05rem"
-              >
-                Our Team Values
-              </h4>
-              <ul
+              <div
                 style="
-                  list-style: none;
-                  padding: 0;
+                  width: 140px;
+                  height: 140px;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  margin: 0 auto 1.5rem;
+                  border: 3px solid var(--red);
+                "
+              >
+                <img
+                  src="director-1.jpg"
+                  alt="Moses Kipchoge — Technical Director"
+                  width="140"
+                  height="140"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+              <h4
+                style="
+                  color: var(--navy);
+                  margin: 0 0 0.3rem;
+                  font-size: 1.15rem;
+                "
+              >
+                Moses Kipchoge
+              </h4>
+              <p
+                style="
+                  margin: 0 0 1rem;
+                  color: var(--red);
+                  font-weight: 600;
+                  font-size: 0.98rem;
+                "
+              >
+                Technical Director
+              </p>
+              <p
+                style="
                   margin: 0;
+                  color: rgba(33, 33, 33, 0.8);
+                  line-height: 1.7;
                   font-size: 0.95rem;
                 "
               >
-                <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
-                  <strong style="color: var(--orange)">✓ Trust</strong> —
-                  Building lasting relationships through honesty
-                </li>
-                <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
-                  <strong style="color: var(--orange)"
-                    >✓ Professionalism</strong
-                  >
-                  — Maintaining highest standards
-                </li>
-                <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
-                  <strong style="color: var(--orange)">✓ Innovation</strong> —
-                  Embracing cutting-edge technology
-                </li>
-                <li style="color: rgba(33, 33, 33, 0.8)">
-                  <strong style="color: var(--orange)">✓ Rapid Response</strong>
-                  — Quick action when needed
-                </li>
-              </ul>
+                Expert technician with 8+ years in CCTV systems, access control,
+                and electrical security. Moses oversees all technical
+                installations, quality assurance, and field operations across
+                Nairobi.
+              </p>
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  padding-top: 1.5rem;
+                  border-top: 1px solid rgba(10, 42, 77, 0.1);
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: rgba(33, 33, 33, 0.7);
+                  "
+                >
+                  <strong style="color: var(--navy)">Specialization:</strong>
+                  CCTV Systems, Installation, Quality Control
+                </p>
+              </div>
+            </article>
+
+            <!-- Director 3 - Right -->
+            <article
+              class="profile-card"
+              style="
+                background: linear-gradient(135deg, #fff, #f5f5f5);
+                padding: 2rem;
+                text-align: center;
+                border-left: 4px solid #2196f3;
+              "
+            >
+              <div
+                style="
+                  width: 140px;
+                  height: 140px;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  margin: 0 auto 1.5rem;
+                  border: 3px solid #2196f3;
+                "
+              >
+                <img
+                  src="director-1.jpg"
+                  alt="Sarah Kamau — Business Development Director"
+                  width="140"
+                  height="140"
+                  loading="lazy"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                  "
+                />
+              </div>
+              <h4
+                style="
+                  color: var(--navy);
+                  margin: 0 0 0.3rem;
+                  font-size: 1.15rem;
+                "
+              >
+                Sarah Kamau
+              </h4>
+              <p
+                style="
+                  margin: 0 0 1rem;
+                  color: #2196f3;
+                  font-weight: 600;
+                  font-size: 0.98rem;
+                "
+              >
+                Business Development Director
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  color: rgba(33, 33, 33, 0.8);
+                  line-height: 1.7;
+                  font-size: 0.95rem;
+                "
+              >
+                Strategic business leader with 6+ years in enterprise sales and
+                client partnerships. Sarah drives market expansion, manages
+                corporate relationships, and ensures customer satisfaction in
+                all business operations.
+              </p>
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  padding-top: 1.5rem;
+                  border-top: 1px solid rgba(10, 42, 77, 0.1);
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: rgba(33, 33, 33, 0.7);
+                  "
+                >
+                  <strong style="color: var(--navy)">Specialization:</strong>
+                  Business Strategy, Client Relations, Market Development
+                </p>
+              </div>
             </article>
           </div>
+
+          <!-- Team Values Box -->
+          <article
+            style="
+              padding: 2rem;
+              border-radius: 12px;
+              background: linear-gradient(
+                135deg,
+                rgba(10, 42, 77, 0.08),
+                rgba(245, 124, 0, 0.08)
+              );
+              border-left: 4px solid var(--navy);
+              max-width: 700px;
+              margin: 3rem auto;
+            "
+          >
+            <h4
+              style="color: var(--navy); margin: 0 0 1rem; font-size: 1.05rem"
+            >
+              Our Core Team Values
+            </h4>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-size: 0.95rem;
+              "
+            >
+              <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
+                <strong style="color: var(--orange)">✓ Trust</strong> — Building
+                lasting relationships through honesty and reliability
+              </li>
+              <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
+                <strong style="color: var(--orange)">✓ Professionalism</strong>
+                — Maintaining highest standards
+              </li>
+              <li style="margin-bottom: 0.8rem; color: rgba(33, 33, 33, 0.8)">
+                <strong style="color: var(--orange)">✓ Innovation</strong> —
+                Embracing cutting-edge technology
+              </li>
+              <li style="color: rgba(33, 33, 33, 0.8)">
+                <strong style="color: var(--orange)">✓ Rapid Response</strong>
+                — Quick action when clients need us
+              </li>
+            </ul>
+          </article>
 
           <!-- TEAM HIGHLIGHTS -->
           <h4

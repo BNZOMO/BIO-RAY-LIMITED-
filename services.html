@@ -11,35 +11,89 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="brand">
-        <a href="index.html">
-          <img src="logo2.png" alt="Bio Ray Solutions" class="logo" />
-        </a>
-        <div>
-          <div class="brand-name">Bio Ray Solutions</div>
-          <div class="brand-tagline">Security & Solar • Nairobi</div>
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="logo-mark">
+            <a href="index.html" class="brand-home" aria-label="Home">
+              <img
+                src="logo2.png"
+                alt="Bio Ray Solutions logo"
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+                style="
+                  width: 48px;
+                  height: 48px;
+                  border-radius: 8px;
+                  object-fit: contain;
+                  display: block;
+                "
+              />
+            </a>
+          </div>
+          <div>
+            <h1 style="font-size: 1rem; margin-bottom: 0">Bio Ray Solutions</h1>
+            <div style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.9)">
+              Guarding Lives, Securing Property
+            </div>
+          </div>
         </div>
+
+        <!-- Mobile toggle -->
+        <label
+          for="nav-toggle"
+          class="menu-btn"
+          style="
+            cursor: pointer;
+            padding: 0.5rem;
+            background: transparent;
+            border-radius: 8px;
+          "
+        >
+          <svg
+            width="22"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="#ffffff"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </label>
+        <input id="nav-toggle" type="checkbox" />
+
+        <nav>
+          <ul>
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="about.html">About Us</a></li>
+            <li class="nav-item">
+              <a href="services.html" class="active">Services</a>
+            </li>
+            <li class="nav-item"><a href="projects.html">Projects</a></li>
+            <li class="nav-item">
+              <a href="testimonials.html">Testimonials</a>
+            </li>
+            <li class="nav-item"><a href="management.html">Management</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a
+          href="tel:+254724533636"
+          class="btn-primary"
+          style="display: none; @media (min-width: 980px) {display: block}"
+          >Call Now</a
+        >
       </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label">☰</label>
-      <nav>
-        <ul>
-          <li class="nav-item"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="about.html">About Us</a></li>
-          <li class="nav-item">
-            <a href="services.html" class="active">Services</a>
-          </li>
-          <li class="nav-item"><a href="projects.html">Projects</a></li>
-          <li class="nav-item"><a href="testimonials.html">Testimonials</a></li>
-          <li class="nav-item"><a href="management.html">Management</a></li>
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="tel:+254724533636" class="cta-button">Call Now</a>
     </header>
 
-    <main>
+    <main style="padding-top: 72px">
       <!-- Hero Section -->
       <section
         class="hero-section"
@@ -82,63 +136,189 @@
 
           <div class="services-grid">
             <div class="service-card">
+              <img
+                src="cctv-2.jpeg"
+                alt="CCTV Cameras"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">📹</div>
               <h3>CCTV Systems</h3>
               <p>
-                HD cameras with 24/7 recording, remote monitoring, and cloud
-                storage for complete visibility of your property.
+                Professional HD surveillance systems for 24/7 security
+                monitoring and recording.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>HD & 4K camera options</li>
+                <li>Remote cloud viewing</li>
+                <li>Night vision capability</li>
+                <li>Motion detection alerts</li>
+                <li>Extended storage options</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
 
             <div class="service-card">
+              <img
+                src="electric-fence.jfif"
+                alt="Electric Fencing"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">⚡</div>
               <h3>Electric Fencing</h3>
               <p>
-                Perimeter protection systems with shock deterrent for walls,
-                compounds, and estates across Nairobi.
+                Perimeter protection with safe-shock deterrent technology for
+                walls and compounds.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>Professional installation</li>
+                <li>Safe shock deterrent</li>
+                <li>Weather-resistant cables</li>
+                <li>Real-time monitoring</li>
+                <li>Maintenance & support</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
 
             <div class="service-card">
+              <img
+                src="Fire%20alarm.jfif"
+                alt="Fire Alarm Systems"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">🚨</div>
               <h3>Fire Alarm Systems</h3>
               <p>
-                Fire detection and alarm systems for homes, offices, schools,
-                and warehouses to protect lives and property.
+                Advanced fire detection and alarm systems for safety compliance
+                and protection.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>Smoke & heat detection</li>
+                <li>Emergency sirens</li>
+                <li>Fire extinguisher supply</li>
+                <li>Staff training included</li>
+                <li>Annual servicing</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
 
             <div class="service-card">
+              <img
+                src="access-control.jfif"
+                alt="Access Control"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">🔐</div>
               <h3>Access Control</h3>
               <p>
-                Biometric, card, and PIN systems for doors, gates, and secure
-                areas with real-time access logs.
+                Biometric and card-based access systems with real-time
+                monitoring and logging.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>Fingerprint recognition</li>
+                <li>Card reader systems</li>
+                <li>PIN codes & passwords</li>
+                <li>Real-time access logs</li>
+                <li>Multi-level security zones</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
 
             <div class="service-card">
+              <img
+                src="Solar%20Panels%202.jfif"
+                alt="Solar Solutions"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">☀️</div>
               <h3>Solar Solutions</h3>
               <p>
-                Solar water heating and backup power systems designed for
-                Nairobi's climate to reduce energy costs.
+                Solar water heating and backup power systems optimized for
+                Nairobi's climate.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>Solar water heaters</li>
+                <li>Backup power systems</li>
+                <li>Energy cost reduction</li>
+                <li>Eco-friendly setup</li>
+                <li>10+ year warranty</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
 
             <div class="service-card">
+              <img
+                src="packgroup.jpg"
+                alt="Security Integration"
+                style="
+                  width: 100%;
+                  height: 160px;
+                  object-fit: cover;
+                  border-radius: 10px;
+                  margin-bottom: 1rem;
+                  display: block;
+                "
+                loading="lazy"
+                decoding="async"
+              />
               <div class="card-icon">🛡️</div>
               <h3>General Security</h3>
               <p>
-                Integrated alarm systems, motion sensors, and security setups
-                for homes, offices, and small estates.
+                Integrated security systems combining alarms, sensors, and
+                monitoring solutions.
               </p>
-              <a href="contact.html" class="card-link">Learn More →</a>
+              <ul>
+                <li>Perimeter alarms</li>
+                <li>Motion sensors</li>
+                <li>Door/window sensors</li>
+                <li>Panic buttons</li>
+                <li>24/7 monitoring</li>
+              </ul>
+              <a href="contact.html" class="card-link">Get a Quote →</a>
             </div>
           </div>
         </div>

@@ -260,89 +260,59 @@
         </div>
       </section>
 
-      <!-- TEAM SECTION -->
+      <!-- QR CODE / CONTACT VCARD SECTION -->
       <section
-        aria-label="management team"
+        aria-label="contact vcard"
         style="
           background: linear-gradient(
-            180deg,
-            rgba(10, 42, 77, 0.02),
-            transparent
+            135deg,
+            rgba(245, 124, 0, 0.05),
+            rgba(10, 42, 77, 0.05)
           );
+          text-align: center;
         "
       >
         <div class="container">
-          <h3>Management Team</h3>
+          <h3>Scan to Save Our Contact</h3>
           <p
             style="
               max-width: 720px;
-              margin: 0 0 2rem 0;
+              margin: 0 0 2rem;
               color: rgba(33, 33, 33, 0.8);
               font-size: 0.96rem;
             "
           >
-            Our experienced leadership team brings decades of combined expertise
-            in security, fire safety, and renewable energy solutions.
+            Quickly save Bio Ray Solutions to your contacts by scanning this QR
+            code with your phone camera.
           </p>
-
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 2rem;
-            "
-          >
-            <!-- Director 1 -->
-            <article class="profile-card" style="text-align: center">
-              <div
+          <div style="text-align: center">
+            <img
+              src="qr-vcard.png"
+              alt="QR code to save Bio Ray Solutions contact"
+              style="
+                width: 200px;
+                height: 200px;
+                border-radius: 12px;
+                border: 3px solid var(--orange);
+                margin: 0 auto;
+              "
+            />
+            <div style="margin-top: 1.5rem">
+              <a
+                href="BR-Shield.vcf"
+                download
                 style="
-                  width: 120px;
-                  height: 120px;
-                  border-radius: 12px;
-                  overflow: hidden;
-                  margin: 0 auto 1rem;
-                "
-              >
-                <img
-                  src="director-1.jpg"
-                  alt="Brian Nzomo — Managing Director"
-                  width="120"
-                  height="120"
-                  loading="lazy"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                  "
-                />
-              </div>
-              <h4 style="color: var(--navy); margin: 0 0 0.3rem">
-                Brian Nzomo
-              </h4>
-              <p
-                style="
-                  margin: 0 0 1rem;
-                  color: var(--orange);
+                  display: inline-block;
+                  padding: 0.7rem 1.4rem;
+                  background: var(--navy);
+                  color: white;
+                  border-radius: 8px;
                   font-weight: 600;
                   font-size: 0.95rem;
                 "
+                >Download vCard</a
               >
-                Managing Director
-              </p>
-              <p
-                style="
-                  margin: 0;
-                  color: rgba(33, 33, 33, 0.75);
-                  font-size: 0.9rem;
-                  line-height: 1.6;
-                "
-              >
-                Visionary leader with extensive experience in security system
-                integration and business development. Drives innovation and
-                client satisfaction across all Bio Ray projects.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
