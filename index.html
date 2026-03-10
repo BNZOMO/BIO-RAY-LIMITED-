@@ -148,7 +148,7 @@
     </header>
 
     <!-- HERO SECTION WITH CAROUSEL -->
-    <main id="home" style="position: relative; z-index: 1; margin-top: 72px">
+    <main id="home" style="position: relative; z-index: 1; margin-top: 0">
       <!-- Video Background -->
       <div class="carousel-container">
         <div class="carousel">
@@ -158,7 +158,7 @@
             muted
             loop
             playsinline
-            style="width: 100%; height: 100%; object-fit: cover;"
+            style="width: 100%; height: 100%; object-fit: cover"
           >
             <source src="Solar Background Video(2).mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -245,13 +245,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">📹</div>
+                <img
+                  class="service-img-hover"
+                  src="CCTV Services.jpg"
+                  alt="CCTV Systems"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -260,7 +277,7 @@
                     font-weight: 700;
                   "
                 >
-                  CCTV Systems
+                  CCTV and Motion Detection Systems
                 </h4>
                 <p
                   style="
@@ -297,13 +314,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">⚡</div>
+                <img
+                  class="service-img-hover"
+                  src="Electric fence services.jfif"
+                  alt="Electric Fencing"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -312,7 +346,7 @@
                     font-weight: 700;
                   "
                 >
-                  Electric Fencing
+                  Electric Fencing and Razor Wire installations
                 </h4>
                 <p
                   style="
@@ -336,7 +370,7 @@
                 >
               </div>
 
-              <!-- Fire Alarms -->
+              <!-- Fire Equipments and Alarm Installation -->
               <div
                 style="
                   background: #fff;
@@ -349,13 +383,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">🚨</div>
+                <img
+                  class="service-img-hover"
+                  src="Fire maintenance srvices 2.jpg"
+                  alt="Fire Alarm Systems"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -364,7 +415,7 @@
                     font-weight: 700;
                   "
                 >
-                  Fire Alarm Systems
+                  Fire Equipments and Alarm Installation
                 </h4>
                 <p
                   style="
@@ -374,8 +425,8 @@
                     line-height: 1.5;
                   "
                 >
-                  Advanced detection systems with emergency sirens and
-                  compliance support
+                  Supply and installation of fire detection equipment with
+                  emergency sirens and compliance support
                 </p>
                 <a
                   href="services.html"
@@ -388,7 +439,7 @@
                 >
               </div>
 
-              <!-- Access Control -->
+              <!-- Access Control Systems -->
               <div
                 style="
                   background: #fff;
@@ -401,13 +452,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">🔐</div>
+                <img
+                  class="service-img-hover"
+                  src="biometric.jpeg"
+                  alt="Access Control"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -416,7 +484,7 @@
                     font-weight: 700;
                   "
                 >
-                  Access Control
+                  Access Control Systems
                 </h4>
                 <p
                   style="
@@ -453,13 +521,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">☀️</div>
+                <img
+                  class="service-img-hover"
+                  src="solar panels.jpg"
+                  alt="Solar Solutions"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -468,7 +553,7 @@
                     font-weight: 700;
                   "
                 >
-                  Solar Solutions
+                  Solar Solutions and Backup Power Systems
                 </h4>
                 <p
                   style="
@@ -478,8 +563,8 @@
                     line-height: 1.5;
                   "
                 >
-                  Solar water heaters and backup power systems with 10+ year
-                  warranty
+                  Solar panels,solar water heaters and backup power systems with
+                  10+ year warranty
                 </p>
                 <a
                   href="services.html"
@@ -505,13 +590,30 @@
                 onmouseover="
                   this.style.boxShadow = '0 8px 16px rgba(10, 42, 77, 0.15)';
                   this.style.transform = 'translateY(-4px)';
+                  this.querySelector('.service-emoji').style.opacity = '0';
+                  this.querySelector('.service-img-hover').style.opacity = '1';
                 "
                 onmouseout="
                   this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                   this.style.transform = 'translateY(0)';
+                  this.querySelector('.service-emoji').style.opacity = '1';
+                  this.querySelector('.service-img-hover').style.opacity = '0';
                 "
               >
-                <div style="font-size: 2rem; margin-bottom: 0.5rem">🛡️</div>
+                <img
+                  class="service-img-hover"
+                  src="smart homes.jpeg"
+                  alt="General Security"
+                  style="
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 0.5rem;
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                  "
+                />
                 <h4
                   style="
                     font-size: 1.1rem;
@@ -520,7 +622,7 @@
                     font-weight: 700;
                   "
                 >
-                  General Security
+                  General Home & Business Security
                 </h4>
                 <p
                   style="
@@ -530,8 +632,8 @@
                     line-height: 1.5;
                   "
                 >
-                  Integrated alarms, sensors, and 24/7 monitoring for complete
-                  protection
+                  Security Personnel,Integrated alarms, sensors, and 24/7
+                  monitoring for complete protection
                 </p>
                 <a
                   href="services.html"
