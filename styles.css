@@ -1055,6 +1055,7 @@ footer {
 }
 
 /* ==================== SERVICE CARDS IMPROVED ==================== */
+
 .service-card {
   background: var(--white);
   border-radius: 12px;
@@ -1062,6 +1063,8 @@ footer {
   box-shadow: 0 4px 12px rgba(10, 42, 77, 0.06);
   border: 1px solid rgba(10, 42, 77, 0.04);
   transition: all 0.3s cubic-bezier(0.2, 0.9, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
@@ -1122,6 +1125,61 @@ footer {
 .card-link:hover {
   color: var(--orange);
   transform: translateX(4px);
+}
+
+/* --- CORE SERVICES GRID RESPONSIVENESS --- */
+
+/* 1. Base Grid Overrides */
+@media (max-width: 1024px) {
+  .services-grid {
+    /* Using !important to override the inline style repeat(3, 1fr) */
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .services-grid {
+    grid-template-columns: 1fr !important; /* Stack cards vertically on phones */
+    gap: 15px !important;
+  }
+
+  /* 2. Adjust Card Typography for smaller screens */
+  .section-light h2 {
+    font-size: 1.75rem !important;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .section-intro {
+    font-size: 1rem !important;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  /* 3. Improve Card layout for mobile touch */
+  .service-card {
+    padding: 1.25rem !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Make the "Get a Quote" link more button-like for mobile thumbs */
+  .card-link {
+    margin-top: auto; /* Push to bottom of card */
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+    color: var(--orange) !important;
+  }
+}
+
+/* 4. Fix container padding on small devices */
+.section-light {
+  padding: 40px 0;
 }
 
 /* Floating QR button (mobile) */
